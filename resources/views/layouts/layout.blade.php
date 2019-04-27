@@ -134,8 +134,8 @@
             <div id="ui-alert" class="section">
               <div class="row">
                 @if ($errors->any()) 
-                  <div id="card-alert" class="card light-blue lighten-5">
-                      <div class="card-content light-blue-text">
+                  <div id="card-alert" class="card red accent-1">
+                      <div class="card-content red-text text-darken-3">
                           <ul>
                               @foreach ($errors->all() as $error)
                                   <li><strong>{{ $error }}</strong></li>
@@ -145,15 +145,15 @@
                   </div>    
                 @endif
                 @if(session('mensaje')) 
-                                    <div id="card-alert" class="card green">
-                                        <div class="card-content white-text">
-                                            <p><i class="mdi-navigation-check"></i>{{ session('message') }}</p>
-                                        </div>
-                                        <button type="button" class="close white-text" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                        </button>
-                                    </div>
-                                @endif
+                    <div id="card-alert" class="card green">
+                        <div class="card-content white-text">
+                            <p><i class="mdi-navigation-check"></i>{{ session('mensaje') }}</p>
+                        </div>
+                        <button type="button" class="close white-text" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                @endif
               </div>
             </div>
                 @yield('content')

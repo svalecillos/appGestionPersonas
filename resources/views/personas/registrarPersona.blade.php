@@ -26,7 +26,7 @@
                                 <!--Campo nombres-->
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input id="nombres" type="text" name="nombres" class="validate">
+                                    <input id="nombres" type="text" name="nombres" class="validate" value="{{ old('nombres') }}">
                                     <label for="icon_prefix">Nombres</label>
                                 </div>
                             </div>
@@ -34,13 +34,13 @@
                                 <!--Campo primer apellido-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input type="text" id="primer_apellido"  name="primer_apellido" class="validate">
+                                    <input type="text" id="primer_apellido"  name="primer_apellido" class="validate" value="{{ old('primer_apellido') }}">
                                     <label for="icon_prefix">Primer apellido</label>
                                 </div>
                                 <!--Campo segundo apellido-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input type="text" id="segundo_apellido" name="segundo_apellido" class="validate">
+                                    <input type="text" id="segundo_apellido" name="segundo_apellido" class="validate" value="{{ old('segundo_apellido') }}">
                                     <label for="icon_prefix">Segundo apellido</label>
                                 </div>
                             </div>
@@ -48,13 +48,13 @@
                                 <!--Campo cedula-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">contacts</i>
-                                    <input type="text" id="cedula"  name="cedula" class="validate">
+                                    <input type="text" id="cedula"  name="cedula" class="validate" value="{{ old('cedula') }}">
                                     <label for="icon_prefix">Cedula</label>
                                 </div>
                                 <!--Campo correo-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">email</i>
-                                    <input type="email" id="correo" name="correo" class="validate">
+                                    <input type="email" id="correo" name="correo" class="validate" value="{{ old('correo') }}">
                                     <label for="icon_prefix">Correo</label>
                                 </div>
                             </div>
@@ -62,13 +62,13 @@
                                 <!--Campo telefono-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">call</i>
-                                    <input type="text" id="telefono" name="telefono" class="validate">
+                                    <input type="text" id="telefono" name="telefono" class="validate" value="{{ old('telefono') }}">
                                     <label for="icon_prefix">Telefono</label>
                                 </div>
                                 <!--Fecha de nacimiento-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">cake</i>
-                                    <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" >
+                                    <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}">
                                     <label for="icon_prefix">Fecha de nacimiento</label>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                             <!--Campo promocion-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">school</i>
-                                <select id="promocion" name="promocion">
+                                <select id="promocion" name="promocion_id" class="validate" value="{{ old('promocion_id') }}">
                                     <option value="" disabled selected>Selecciona una opcion</option>
                                     @foreach($promociones as $promocion)
                                         <option value="{{ $promocion->id }}">{{ $promocion->descripcion }}</option>
@@ -92,13 +92,13 @@
                             <!--Campo Fecha de ingreso-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">date_range</i>
-                                <input type="text" id="fecha_ingreso" name="fecha_ingreso" >
+                                <input type="text" id="fecha_ingreso" name="fecha_ingreso" value="{{ old('fecha_ingreso') }}">
                                 <label for="icon_prefix">Fecha de ingreso</label>
                             </div>
-                            <!--Campo Fecha de ingreso-->
+                            <!--Campo Fecha de egreso -->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">date_range</i>
-                                <input type="text" id="fecha_egreso" name="fecha_egreso" >
+                                <input type="text" id="fecha_egreso" name="fecha_egreso" value="{{ old('fecha_egreso') }}">
                                 <label for="icon_prefix">Fecha de egreso</label>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                             <!--Campo categoria-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">school</i>
-                                <select id="categoria" name="categoria">
+                                <select id="categoria" name="categoria_id" class="validate" value="{{ old('categoria_id') }}">
                                     <option value="" disabled selected>Selecciona una opcion</option>
                                     @foreach($categorias as $categoria)
                                         <option value="{{ $categoria->id }}">{{ $categoria->descripcion }}</option>
@@ -122,7 +122,7 @@
                             <!--Campo profesion-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">work</i>
-                                <select id="profesion" name="profesion">
+                                <select id="profesion" name="profesion_id" class="validate" value="{{ old('profesion_id') }}">
                                     <option value="" disabled selected>Selecciona una opcion</option>
                                     @foreach($profesiones as $profesion)
                                         <option value="{{ $profesion->id }}">{{ $profesion->descripcion }}</option>
@@ -135,13 +135,13 @@
                             <!--Campo especialidad-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">business_center</i>
-                                <input type="text" id="especialidad" name="especialidad" class="validate">
+                                <input type="text" id="especialidad" name="especialidad" class="validate" value="{{ old('especialidad') }}">
                                 <label for="icon_prefix">Especialidad</label>
                             </div>
                             <!--Campo ocupacion-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">business_center</i>
-                                <input type="text" id="ocupacion" name="ocupacion" class="validate">
+                                <input type="text" id="ocupacion" name="ocupacion" class="validate" value="{{ old('ocupacion') }}">
                                 <label for="icon_prefix">Ocupacion</label>
                             </div>
                         </div>
@@ -154,7 +154,7 @@
                             <!--Campo paises-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">public</i>
-                                <select id="paises" name="paises">
+                                <select id="pais" name="pais" class="validate" value="{{ old('pais') }}">
                                     <option value="" disabled selected>Selecciona una opcion</option>
                                 </select>
                                 <label for="icon_prefix">Pais</label>
@@ -162,7 +162,7 @@
                             <!--Campo estados-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">public</i>
-                                <select id="estados" name="estado">
+                                <select id="estado" name="estado" class="validate" value="{{ old('estado') }}">
                                     <option value="" disabled selected>Selecciona una opcion</option>
                                 </select>
                                 <label for="icon_prefix">Estado</label>
@@ -172,7 +172,7 @@
                             <!--Campo ciudades-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">public</i>
-                                <select id="ciudades" name="ciudad">
+                                <select id="ciudad" name="ciudad" class="validate" value="{{ old('ciudad') }}">
                                     <option value="" disabled selected>Selecciona una opcion</option>
                                 </select>
                                 <label for="icon_prefix">Ciudad</label>
@@ -180,7 +180,7 @@
                             <!--Campo sector-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">public</i>
-                                <input type="text" id="sector" name="sector" class="validate">
+                                <input type="text" id="sector" name="sector" class="validate" value="{{ old('sector') }}">
                                 <label for="icon_prefix">Sector</label>
                             </div>
                         </div>

@@ -7,24 +7,24 @@ url = "https://geo-battuta.net/api/country/all/?key="+BATTUTA_KEY+"&callback=?";
 
 $.getJSON(url,function(paises){
     console.log(paises);
-    $('#paises').material_select();
+    $('#pais').material_select();
 
     //Recorrer los paises
     $.each(paises,function(key, pais){
         $("<option></option>")
             .attr("value", pais.code)
             .append(pais.name)
-            	.appendTo($("#paises"));
+            	.appendTo($("#pais"));
     });
     //Cambio
-	$("#paises").material_select("update");
-	$("#paises").trigger("change");
+	$("#pais").material_select("update");
+	$("#pais").trigger("change");
 });
 
 //Al escoger el pais llamamos al servicio que traiga los estados de ese paos
-$("#paises").on("change", function(){
+$("#pais").on("change", function(){
 
-	codePais=$("#paises").val();
+	codePais=$("#pais").val();
 
 	url = "https://geo-battuta.net/api/region/"
 	    +codePais
@@ -32,22 +32,22 @@ $("#paises").on("change", function(){
 
 	$.getJSON(url, function(estados){
 		console.log(estados);
-		$("#estados option").remove();
+		$("#estado option").remove();
 		$.each(estados,function(key,estado){
 		    $("<option></option>")
 		        .attr("value",estado.region)
 		        .append(estado.region)
-		        .appendTo($("#estados"));
+		        .appendTo($("#estado"));
 		});
-		$("#estados").material_select('update');
-	    $("#estados").trigger("change");
+		$("#estado").material_select('update');
+	    $("#estado").trigger("change");
 	});
 });
 
 //Al escoger un estado llamamos el servicios que retorna las ciudades
-$("#estados").on("change", function(){
-	codePais=$("#paises").val();
-	estado=$("#estados").val();
+$("#estado").on("change", function(){
+	codePais=$("#pais").val();
+	estado=$("#estado").val();
 
 	url = "http://geo-battuta.net/api/city/"
 		+codePais
@@ -61,7 +61,7 @@ $("#estados").on("change", function(){
 		console.log(ciudades);
   		currentCities=ciudades;
         var i=0;
-        $("#ciudades option").remove();
+        $("#ciudad option").remove();
         
 		//loop through regions..
 		$.each(ciudades,function(key,ciudad)
@@ -69,10 +69,10 @@ $("#estados").on("change", function(){
 		    $("<option></option>")
 		        .attr("value",i++)
 		        .append(ciudad.city)
-		        .appendTo($("#ciudades"));
+		        .appendTo($("#ciudad"));
 		});
 	// trigger "change" to fire the #state section update process
-	$("#ciudades").material_select('update');
-	$("#ciudades").trigger("change");
+	$("#ciudad").material_select('update');
+	$("#ciudad").trigger("change");
 	});
 });

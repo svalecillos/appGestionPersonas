@@ -38,8 +38,7 @@
                 @foreach ($personas as $persona)
                     <tr>
                         <td>
-                            {{ $persona->primer_nombre }}
-                            {{ $persona->segundo_nombre }}
+                            {{ $persona->nombres }}
                         </td>
                         <td>
                             {{ $persona->primer_apellido }}
