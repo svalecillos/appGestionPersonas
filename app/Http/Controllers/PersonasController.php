@@ -6,6 +6,7 @@ use App\datosPersona;
 use App\promocion;
 use App\categoria;
 use App\profesion;
+use Illuminate\Validation\Rule;
 
 use Illuminate\Http\Request;
 
@@ -25,7 +26,11 @@ class PersonasController extends Controller
         return view('personas.registrarPersona', compact('promociones', 'categorias', 'profesiones'));
     }
 
-    public function registrarPersona(Request $request){
+    /**
+    *   Contiene todas las validaciones de los formularios para el registro y 
+    *   actualizacion de la persona
+    **/
+    public function validacionesFormulario(Request $request){
         $rules = [
             'nombres' => 'required|max:100',
             'primer_apellido' => 'required|max:50',
@@ -64,14 +69,45 @@ class PersonasController extends Controller
             'pais.required' => 'El campo paises es obligatorio',
             'estado.required' => 'El campo estados es obligatorio',
         ];
+
         $this->validate($request, $rules, $mensajes);
+    }
+
+    /**
+    *   Inserta en la db los datos de la persona
+    **/
+    public function registrarPersona(Request $request){
+        
+        $this->validacionesFormulario($request);
 
         datosPersona::create($request->all());
 
-        return redirect()->route('listarPersonas')->with('mensaje','La persona ha sido registrada satisfactoriamente');;
+        return redirect()->route('listarPersonas')->with('mensaje','La persona ha sido registrada satisfactoriamente');
     }
 
+    /**
+    *   Carga el formulario para actualizar la persona
+    **/
     public function viewEditarPersona($id){
 
+        $datosPersona = datosPersona::find($id);
+        $promociones = promocion::all();
+        $categorias = categoria::all();
+        $profesiones = profesion::all();
+
+        return view('personas.editarPersona', compact('datosPersona', 'promociones', 'categorias', 'profesiones'));
+    }
+
+    /**
+    *   Actualiza los datos de la persona
+    **/
+    public function editarDatosPersona(datosPersona $datosPersona, Request $request){
+        dd($datosPersona);
+
+        $this->validacionesFormulario($request);
+
+        $datosPersona->update($request->all());
+
+        return redirect()->route('listarPersonas')->with('mensaje','La persona ha sido registrada satisfactoriamente');
     }
 }
