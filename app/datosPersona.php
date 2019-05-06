@@ -13,8 +13,8 @@ class datosPersona extends Model
 
     protected $fillable =[
         'nombres','primer_apellido','segundo_apellido','cedula', 'telefono', 'fecha_nacimiento',
-        'correo', 'promocion_id', 'fecha_ingreso', 'fecha_egreso', 'categoria_id',  'profesion_id', 'especialidad' , 
-        'ocupacion','pais', 'estado', 'ciudad','sector'
+        'correo', 'promocion_id', 'fecha_ingreso', 'fecha_egreso', 'categoria_id', 'profesion_id', 'especialidad' , 
+        'ocupacion','instagram','twitter','pais', 'estado', 'ciudad','sector'
     ];
 
     public function categoria(){

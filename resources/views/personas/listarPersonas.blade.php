@@ -25,31 +25,34 @@
         <table id="data-table-simple" class="display" cellspacing="0">
             <thead>
                 <tr>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
                     <th>Cedula</th>
+                    <th>Apellidos</th>
+                    <th>Nombres</th>                    
                     <th>Telefono</th>
                     <th>Correo</th>
                     <th>Profesion</th>
-                    <th>Accion</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($personas as $persona)
                     <tr>
-                        <td>
-                            {{ $persona->nombres }}
-                        </td>
+                        <td>{{ $persona->cedula }}</td>
                         <td>
                             {{ $persona->primer_apellido }}
                             {{ $persona->segundo_apellido }}
                         </td>
-                        <td>{{ $persona->cedula }}</td>
+                        <td>
+                            {{ $persona->nombres }}
+                        </td>
                         <td>{{ $persona->telefono }}</td>
                         <td>{{ $persona->correo }}</td>
                         <td>{{ $persona->profesion->descripcion }}</td>
-                        <td><a href="{{ route('cargarVistaEditarPersona',['id' => $persona->id]) }}" 
+                        <td>
+                            <a href="{{ route('cargarVistaEditarPersona',['id' => $persona->id]) }}" 
                                 class="btn waves-effect waves-light cyan">Ver</a>
+                            <a href="{{ route('eliminarPersona',['id' => $persona->id]) }}" 
+                                class="btn waves-effect waves-light red darken-3">Eliminar</a>
                         </td>
                     </tr>                   
                 @endforeach

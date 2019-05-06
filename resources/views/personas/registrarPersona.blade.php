@@ -17,7 +17,7 @@
     </div>
     <div class="row">
         <div class="col s12 m12 l8">
-            <form method="post" action="{{ url('personas/crear') }}">
+            <form  id="formularioPersona" method="post" action="{{ url('personas/crear') }}">
                 {{ csrf_field() }}
                 <div class="card-panel">
                     <div class="row">
@@ -51,11 +51,11 @@
                                     <input type="text" id="cedula"  name="cedula" class="validate" value="{{ old('cedula') }}">
                                     <label for="icon_prefix">Cedula</label>
                                 </div>
-                                <!--Campo correo-->
+                                <!--Fecha de nacimiento-->
                                 <div class="input-field col s6">
-                                    <i class="material-icons prefix">email</i>
-                                    <input type="email" id="correo" name="correo" class="validate" value="{{ old('correo') }}">
-                                    <label for="icon_prefix">Correo</label>
+                                    <i class="material-icons prefix">cake</i>
+                                    <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}">
+                                    <label for="icon_prefix">Fecha de nacimiento</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -65,11 +65,11 @@
                                     <input type="text" id="telefono" name="telefono" class="validate" value="{{ old('telefono') }}">
                                     <label for="icon_prefix">Telefono</label>
                                 </div>
-                                <!--Fecha de nacimiento-->
+                                <!--Campo correo-->
                                 <div class="input-field col s6">
-                                    <i class="material-icons prefix">cake</i>
-                                    <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}">
-                                    <label for="icon_prefix">Fecha de nacimiento</label>
+                                    <i class="material-icons prefix">email</i>
+                                    <input type="email" id="correo" name="correo" class="validate" value="{{ old('correo') }}">
+                                    <label for="icon_prefix">Correo</label>
                                 </div>
                             </div>
                     </div>
@@ -143,6 +143,20 @@
                                 <i class="material-icons prefix">business_center</i>
                                 <input type="text" id="ocupacion" name="ocupacion" class="validate" value="{{ old('ocupacion') }}">
                                 <label for="icon_prefix">Ocupacion</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!--Campo especialidad-->
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">business_center</i>
+                                <input type="text" id="instagram" name="instagram" class="validate" value="{{ old('instagram') }}">
+                                <label for="icon_prefix">Instagram</label>
+                            </div>
+                            <!--Campo ocupacion-->
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">business_center</i>
+                                <input type="text" id="twitter" name="twitter" class="validate" value="{{ old('twitter') }}">
+                                <label for="icon_prefix">Twitter</label>
                             </div>
                         </div>
                     </div>

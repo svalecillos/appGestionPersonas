@@ -181,6 +181,9 @@
     <!-- jQuery Library -->
     <script type="text/javascript" src="{{ asset('vendors/jquery-3.2.1.min.js') }}"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{ asset('vendors/jquery-validation/jquery.validate.js') }}"></script>
+    <!--Validaciones formularios-->
+    <script src="{{ asset('js/validacionFormPersona.js') }}"></script>
     <!--materialize js-->
     <script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
     <!--scrollbar-->

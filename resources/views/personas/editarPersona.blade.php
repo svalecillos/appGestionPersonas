@@ -3,7 +3,7 @@
 @section('title', 'Editar persona')
 
 @section('content')
-<div id="breadcrumbs-wrapper">
+    <div id="breadcrumbs-wrapper">
         <div class="row">
             <div class="col s10 m6 l6">
                 <h5 class="breadcrumbs-title">Actualizar datos</h5>
@@ -17,7 +17,7 @@
     </div>
     <div class="row">
         <div class="col s12 m12 l8">
-            <form method="post" action="{{ url("personas/actualizar/{$datosPersona->id}") }}">
+            <form id="formularioPersona" method="post" action="{{ url("personas/actualizar/{$datosPersona->id}") }}">
                 {{ method_field('PUT') }}
                 {{ csrf_field() }}
                 <div class="card-panel">
@@ -144,6 +144,20 @@
                                 <i class="material-icons prefix">business_center</i>
                                 <input type="text" id="ocupacion" name="ocupacion" class="validate" value="{{ old('ocupacion', $datosPersona->ocupacion) }}">
                                 <label for="icon_prefix">Ocupacion</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!--Campo instagram-->
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">business_center</i>
+                                <input type="text" id="instagram" name="instagram" class="validate" value="{{ old('instagram', $datosPersona->instagram) }}">
+                                <label for="icon_prefix">Instagram</label>
+                            </div>
+                            <!--Campo twitter-->
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">business_center</i>
+                                <input type="text" id="twitter" name="twitter" class="validate" value="{{ old('twitter', $datosPersona->twitter ) }}">
+                                <label for="icon_prefix">Twitter</label>
                             </div>
                         </div>
                     </div>

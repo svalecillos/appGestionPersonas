@@ -13,9 +13,9 @@ class CreateDatosPersonasTable extends Migration
             $table->string('nombres', 100);
             $table->string('primer_apellido', 50);
             $table->string('segundo_apellido', 50)->nullable();
-            $table->string('cedula', 10)->unique();
-            $table->string('telefono', 15);
             $table->date('fecha_nacimiento');
+            $table->string('telefono', 15);
+            $table->string('cedula', 10)->unique();
             $table->string('correo', 60)->unique();
             $table->unsignedBigInteger('promocion_id');
             $table->date('fecha_ingreso');
@@ -24,6 +24,8 @@ class CreateDatosPersonasTable extends Migration
             $table->unsignedBigInteger('profesion_id');
             $table->string('especialidad', 100)->nullable();
             $table->string('ocupacion', 100)->nullable();
+            $table->string('instagram', 60);
+            $table->string('twitter', 60);
             $table->string('pais', 5);
             $table->string('estado', 100);
             $table->string('ciudad', 100)->nullable();

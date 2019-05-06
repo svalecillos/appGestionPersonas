@@ -4,7 +4,7 @@
 //Route::get('/', '')->name();
 
 //Home
-Route::get('inicio', 'HomeController@index')
+Route::get('/', 'HomeController@index')
     ->name('principal');
 
 //Modulo gestion personas
@@ -23,6 +23,7 @@ Route::get('personas/detalle/{id}', 'PersonasController@viewEditarPersona')
 Route::put('personas/actualizar/{datosPersona}', 'PersonasController@editarDatosPersona')
 	->name('actualizarDatosPersona');
 
+Route::get('personas/eliminar/{id}', 'PersonasController@eliminar')
+    ->where('id','[0-9]+')
+    ->name('eliminarPersona');
 //Modulo administrativo
-
-
