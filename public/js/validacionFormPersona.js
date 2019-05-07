@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#validacionUsuario").validate({
+    $("#formularioPersona").validate({
         rules: {
             nombres: {
                 required: true,
@@ -30,18 +30,18 @@ $(document).ready(function () {
             },
             fecha_nacimiento:{
                 required: true,
-                number:true,
+                date: true
             },
             promocion_id: {
                 required: true,
             },
             fecha_ingreso: {
                 required: true,
-                number:true,
+                date: true
             },
             fecha_egreso: {
                 required: true,
-                number:true,
+                date: true
             },
             categoria_id: {
                 required: true,
@@ -68,7 +68,7 @@ $(document).ready(function () {
                 required: true,
             },
             sector: {
-                maxlength: 11,
+                maxlength: 100,
             }
         },
         //For custom messages
@@ -86,62 +86,71 @@ $(document).ready(function () {
             },
             cedula:{
                 required: "Requiere la cedula",
-                minlength: 6,
-                maxlength: 10,
+                minlength: "El minimo de caracteres es de 4",
+                maxlength: "El maximo de caracteres de 10",
             },
             correo:{
-                required: true,
-                email: true,
-                maxlength: 60,
+                required: "Requiere el correo",
+                email: "Tiene que ser un correo valido",
+                maxlength: "El maximo caracteres es de 60",
             },
             telefono:{
-                required: true,
-                minlength: 11,
-                maxlength: 11,
-                number: true,
+                required: "Requiere el telefono",
+                minlength: "Debe contener 11 caracteres",
+                maxlength: "Debe contener 11 caracteres",
+                number: "El campo solo acepta numeros",
             },
             fecha_nacimiento:{
-                required: true,
-                number:true,
+                required: "La fecha de nacimiento es obligtorio",
+                //number:true,
             },
             promocion_id: {
-                required: true,
+                required: "La promocion es obligatorio",
             },
             fecha_ingreso: {
-                required: true,
-                number:true,
+                required: "La fecha de ingreso es obligatorio",
+                //number:true,
             },
             fecha_egreso: {
-                required: true,
-                number:true,
+                required: "La fecha de egreso es obligatorio",
+                //number:true,
             },
             categoria_id: {
-                required: true,
+                required: "La categoria es obligatorio",
             },
             profesion_id: {
-                required: true,
+                required: "La profesion es obligatorio",
             },
             especialidad: {
-                maxlength: 100,
+                maxlength: "Debe tener un maximo de 100 caracteres",
             },
             ocupacion: {
-                maxlength: 100,
+                maxlength: "Debe tener un maximo de 100 caracteres",
             },
             instagram: {
-                maxlength: 60,
+                maxlength: "Debe tener un maximo de 60 caracteres",
             },
             twitter: {
-                maxlength: 60,
+                maxlength: "Debe tener un maximo de 60 caracteres",
             },
             pais: {
-                required: true,
+                required: "El pais debe ser obligatorio",
             },
             estado: {
-                required: true,
+                required: "El estado debe ser obligatorio",
             },
             sector: {
-                maxlength: 11,
+                maxlength: "El sector de contener un maximo de 100 caracteres",
             }
         },
+        errorElement: 'div',
+        errorPlacement: function (error, element) {
+            var placement = $(element).data('error');
+            if (placement) {
+                $(placement).append(error)
+            } else {
+                error.insertAfter(element);
+            }
+        }
     });
 });
