@@ -6,6 +6,9 @@ use App\datosPersona;
 use App\promocion;
 use App\categoria;
 use App\profesion;
+
+use Carbon\Carbon;
+
 use Illuminate\Validation\Rule;
 
 use Illuminate\Http\Request;
@@ -81,11 +84,20 @@ class PersonasController extends Controller
     **/
     public function registrarPersona(Request $request){
         
+        $datosPersona = new datosPersona();
+
         $this->validacionesFormulario($request);
 
-        datosPersona::create($request->all());
+        $datosPersona->fill($request->except(['fecha_nacimiento', 'fecha_ingreso', 'fecha_egreso']));
 
-        return redirect()->route('listarPersonas')->with('mensaje','La persona ha sido registrada satisfactoriamente');
+        $datosPersona->fecha_nacimiento= Carbon::parse($request->fecha_nacimiento)->format('Y-m-d');
+        $datosPersona->fecha_ingreso= Carbon::parse($request->fecha_ingreso)->format('Y-m-d');
+        $datosPersona->fecha_egreso= Carbon::parse($request->fecha_egreso)->format('Y-m-d');
+
+        //dd($datosPersona);
+        $datosPersona->save();
+
+        return redirect()->route('principal')->with('mensaje','La persona ha sido registrada satisfactoriamente');
     }
 
     /**
@@ -94,6 +106,11 @@ class PersonasController extends Controller
     public function viewEditarPersona($id){
 
         $datosPersona = datosPersona::find($id);
+
+        $datosPersona->fecha_nacimiento= Carbon::parse($datosPersona->fecha_nacimiento)->format('d-m-Y');
+        $datosPersona->fecha_ingreso= Carbon::parse($datosPersona->fecha_ingreso)->format('d-m-Y');
+        $datosPersona->fecha_egreso= Carbon::parse($datosPersona->fecha_egreso)->format('d-m-Y');
+
         $promociones = promocion::all();
         $categorias = categoria::all();
         $profesiones = profesion::all();
@@ -105,6 +122,7 @@ class PersonasController extends Controller
     *   Actualiza los datos de la persona
     **/
     public function editarDatosPersona(datosPersona $datosPersona, Request $request){
+
         $rules = [
             'nombres' => 'required|max:100',
             'primer_apellido' => 'required|max:50',
@@ -130,14 +148,20 @@ class PersonasController extends Controller
 
         $this->validate($request, $rules, $this->mensajes);
 
-        $datosPersona->update($request->all());
+        $datosPersona->fill($request->except(['fecha_nacimiento', 'fecha_ingreso', 'fecha_egreso']));
 
-        return redirect()->route('listarPersonas')->with('mensaje','Los datos de la persona fueron actualizados satisfactoriamente');
+        $datosPersona->fecha_nacimiento= Carbon::parse($request->fecha_nacimiento)->format('Y-m-d');
+        $datosPersona->fecha_ingreso= Carbon::parse($request->fecha_ingreso)->format('Y-m-d');
+        $datosPersona->fecha_egreso= Carbon::parse($request->fecha_egreso)->format('Y-m-d');
+
+        $datosPersona->save();
+
+        return redirect()->route('principal')->with('mensaje','Los datos de la persona fueron actualizados satisfactoriamente');
     }
 
     public function eliminar($id){
         $datosPersona = datosPersona::find($id);
         $datosPersona->delete();
-        return redirect()->route('listarPersonas')->with('mensaje','Persona eliminada satisfactoriamente');;
+        return redirect()->route('principal')->with('mensaje','Persona eliminada satisfactoriamente');;
     }
 }

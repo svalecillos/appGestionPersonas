@@ -5,6 +5,7 @@ namespace App;
 use App\categoria;
 use App\profesion;
 use App\promocion;
+
 use Illuminate\Database\Eloquent\Model;
 
 class datosPersona extends Model

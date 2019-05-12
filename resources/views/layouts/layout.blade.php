@@ -16,7 +16,9 @@
     <!-- For Windows Phone -->
     <!-- CORE CSS-->
     <link href="{{ asset('css/materialize.css') }}" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
     <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet">
     <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
     <link href="{{ asset('vendors/perfect-scrollbar/perfect-scrollbar.css') }}" type="text/css" rel="stylesheet">
@@ -38,13 +40,19 @@
         <nav class="navbar-color gradient-45deg-light-blue-cyan">
           <div class="nav-wrapper">
             <ul class="left">
-              <li>
+              <!--<li>
                 <h1 class="logo-wrapper">
                   <a href="index.html" class="brand-logo darken-1">
                     <img src="{{ asset('images/logo/materialize-logo.png') }}" alt="materialize logo">
                     <span class="logo-text hide-on-med-and-down">Materialize</span>
                   </a>
                 </h1>
+              </li>-->
+              <li>
+                <a href={{ route('principal') }} class="waves-effect waves-cyan">Inicio</a>
+              </li>
+              <li>
+                <a href={{ route('cargarVistaRegistrarPersona') }} class="waves-effect waves-cyan">Formulario</a>
               </li>
             </ul>
             <ul class="right hide-on-med-and-down">
@@ -53,14 +61,15 @@
                   <i class="material-icons">settings_overscan</i>
                 </a>
               </li>
-              <li>
+              <li><a href="#" class="waves-effect waves-cyan">Login</a></li>
+              <!--<li>
                 <a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
                   <span class="avatar-status avatar-online">
                     <img src="{{ asset('images/avatar/avatar-7.png') }}" alt="avatar">
                     <i></i>
                   </span>
                 </a>
-              </li>
+              </li>-->
             </ul>
             <!-- profile-dropdown -->
             <ul id="profile-dropdown" class="dropdown-content">
@@ -110,7 +119,7 @@
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="material-icons">pie_chart_outlined</i><span class="nav-text">Administracion</span></a>
                         <div class="collapsible-body">
                           <ul>     
-                            <li><a href="#">Categoria</a></li>
+                            <li><a href="{{ route('listarCategorias') }}" class="waves-effect waves-cyan">Categoria</a></li>
                           </ul>
                           <ul>     
                             <li><a href="#">Profesion</a></li>
@@ -180,10 +189,13 @@
 
     <!-- jQuery Library -->
     <script type="text/javascript" src="{{ asset('vendors/jquery-3.2.1.min.js') }}"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
     <script src="{{ asset('vendors/jquery-validation/jquery.validate.js') }}"></script>
     <!--Validaciones formularios-->
     <script src="{{ asset('js/validacionFormPersona.js') }}"></script>
+    <script src="{{ asset('js/validacionFormAdministracion.js') }}"></script>
     <!--materialize js-->
     <script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
     <!--scrollbar-->

@@ -15,6 +15,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'date_format' => 'dd-mm-yyyy',
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

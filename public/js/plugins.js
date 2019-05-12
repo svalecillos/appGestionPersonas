@@ -11,7 +11,25 @@
 
     var window_width = $(window).width();
     
-
+    // Pikadate datepicker con JqueryUI
+      $('.datepicker').datepicker({
+        format: 'dd-mm-yyyy',
+        months: [
+            'Enero',
+            'Febrero',
+            'Marzo',
+            'Abril',
+            'Mayo',
+            'Junio',
+            'Julio',
+            'Agosto',
+            'Septiembre',
+            'Octubre',
+            'Noviembre',
+            'Diciembre'
+        ],
+        yearRange: 60
+      });
     // Search class for focus
     $('.header-search-input').focus(
       function() {
@@ -98,25 +116,6 @@
       menuWidth: 300,
       edge: 'right',
     });
-
-    // Pikadate datepicker con JqueryUI
-    $( "#fecha_nacimiento" ).datepicker({
-      changeMonth: true,
-      changeYear: true
-    });
-    $( "#fecha_ingreso" ).datepicker({
-      changeMonth: true,
-      changeYear: true
-    });
-    $( "#fecha_egreso" ).datepicker({
-      changeMonth: true,
-      changeYear: true
-    });
-    
-    /*$('.datepicker').pickadate({
-      selectMonths: true, // Creates a dropdown to control month
-      selectYears: 15 // Creates a dropdown of 15 years to control year
-    });*/
    
     // Perfect Scrollbar
     $('select').not('.disabled').material_select();

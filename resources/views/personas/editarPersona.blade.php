@@ -69,7 +69,7 @@
                                 <!--Fecha de nacimiento-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">cake</i>
-                                    <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" value="{{ old('fecha_nacimiento', $datosPersona->fecha_nacimiento) }}">
+                                    <input type="text" id="fecha_nacimiento" class="datepicker" name="fecha_nacimiento" value="{{ old('fecha_nacimiento', $datosPersona->fecha_nacimiento) }}">
                                     <label for="icon_prefix">Fecha de nacimiento</label>
                                 </div>
                             </div>
@@ -93,13 +93,13 @@
                             <!--Campo Fecha de ingreso-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">date_range</i>
-                                <input type="text" id="fecha_ingreso" name="fecha_ingreso" value="{{ old('fecha_ingreso', $datosPersona->fecha_ingreso) }}">
+                                <input type="text" id="fecha_ingreso" class="datepicker" name="fecha_ingreso" value="{{ old('fecha_ingreso', $datosPersona->fecha_ingreso) }}">
                                 <label for="icon_prefix">Fecha de ingreso</label>
                             </div>
                             <!--Campo Fecha de egreso -->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">date_range</i>
-                                <input type="text" id="fecha_egreso" name="fecha_egreso" value="{{ old('fecha_egreso', $datosPersona->fecha_egreso) }}">
+                                <input type="text" id="fecha_egreso" class="datepicker" name="fecha_egreso" value="{{ old('fecha_egreso', $datosPersona->fecha_egreso) }}">
                                 <label for="icon_prefix">Fecha de egreso</label>
                             </div>
                         </div>

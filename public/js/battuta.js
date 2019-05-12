@@ -1,7 +1,7 @@
 //-------- Api select para paises, estados y ciudades --------//
 
 let paisesCiudades=[];
-let BATTUTA_KEY ="4238554083076c2a255898facf19dc4c"; //Key se vence a medida que se usa
+let BATTUTA_KEY ="00000000000000000000000000000000"; //Key se vence a medida que se usa
 
 url = "https://geo-battuta.net/api/country/all/?key="+BATTUTA_KEY+"&callback=?";
 

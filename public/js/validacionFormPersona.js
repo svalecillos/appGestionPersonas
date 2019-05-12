@@ -30,18 +30,15 @@ $(document).ready(function () {
             },
             fecha_nacimiento:{
                 required: true,
-                date: true
             },
             promocion_id: {
                 required: true,
             },
             fecha_ingreso: {
                 required: true,
-                date: true
             },
             fecha_egreso: {
                 required: true,
-                date: true
             },
             categoria_id: {
                 required: true,
