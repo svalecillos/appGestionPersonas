@@ -24,10 +24,16 @@
                             <h4 class="header2">Datos personales</h4>
                             <div class="row">
                                 <!--Campo nombres-->
-                                <div class="input-field col s12">
+                                <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
                                     <input id="nombres" type="text" name="nombres" class="validate" value="{{ old('nombres') }}">
                                     <label for="icon_prefix">Nombres</label>
+                                </div>
+                                <!--Campo apodos nuevo-->
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="apodos" type="text" name="apodos" class="validate" value="{{ old('apodos') }}">
+                                    <label for="icon_prefix">Apodos</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -101,13 +107,6 @@
                                 <input type="text" id="fecha_egreso" class="datepicker" name="fecha_egreso" value="{{ old('fecha_egreso') }}">
                                 <label for="icon_prefix">Fecha de egreso</label>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-panel">
-                    <div class="row">
-                        <h4 class="header2">Datos profesionales</h4>
-                        <div class="row">
                             <!--Campo categoria-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">school</i>
@@ -118,6 +117,24 @@
                                     @endforeach
                                 </select>
                                 <label for="icon_prefix">Categoria</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-panel">
+                    <div class="row">
+                        <h4 class="header2">Datos profesionales</h4>
+                        <div class="row">
+                            <!--Campo categoria-->
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">school</i>
+                                <select id="nivel_academico" name="nivel_academico_id" class="validate" value="{{ old('nivel_academico_id') }}">
+                                    <option value="" disabled selected>Selecciona una opcion</option>
+                                    @foreach($nivelesAcademicos as $nivelAcademico)
+                                        <option value="{{ $nivelAcademico->id }}">{{ $nivelAcademico->descripcion }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="icon_prefix">Nivel academico</label>
                             </div>
                             <!--Campo profesion-->
                             <div class="input-field col s6">
@@ -168,17 +185,18 @@
                             <!--Campo paises-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">public</i>
-                                <select id="pais" name="pais" class="validate" value="{{ old('pais') }}">
+                                <select id="pais" name="cod_pais" class="validate" value="{{ old('cod_pais') }}">
                                     <option value="" disabled selected>Selecciona una opcion</option>
+                                    @foreach($paises as $pais)
+                                        <option value="{{ $pais->codigo }}">{{ $pais->descripcion }}</option>
+                                    @endforeach
                                 </select>
                                 <label for="icon_prefix">Pais</label>
                             </div>
                             <!--Campo estados-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">public</i>
-                                <select id="estado" name="estado" class="validate" value="{{ old('estado') }}">
-                                    <option value="" disabled selected>Selecciona una opcion</option>
-                                </select>
+                                <input type="text" id="estado" name="estado" class="validate" value="{{ old('estado') }}">
                                 <label for="icon_prefix">Estado</label>
                             </div>
                         </div>
@@ -186,9 +204,7 @@
                             <!--Campo ciudades-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">public</i>
-                                <select id="ciudad" name="ciudad" class="validate" value="{{ old('ciudad') }}">
-                                    <option value="" disabled selected>Selecciona una opcion</option>
-                                </select>
+                                <input type="text" id="ciudad" name="ciudad" class="validate" value="{{ old('ciudad') }}">
                                 <label for="icon_prefix">Ciudad</label>
                             </div>
                             <!--Campo sector-->

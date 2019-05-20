@@ -10,7 +10,7 @@ class CreateCategoriasTable extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('descripcion', 50);
+            $table->string('descripcion', 100);
             $table->boolean('status')->default(true)	;
             $table->timestamps();
         });

@@ -11,22 +11,24 @@ class CreateDatosPersonasTable extends Migration
         Schema::create('datos_personas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombres', 100);
+            $table->string('apodos', 100);
             $table->string('primer_apellido', 50);
             $table->string('segundo_apellido', 50)->nullable();
             $table->date('fecha_nacimiento');
-            $table->string('telefono', 15);
+            $table->string('telefono', 50);
             $table->string('cedula', 10)->unique();
             $table->string('correo', 60)->unique();
             $table->unsignedBigInteger('promocion_id');
             $table->date('fecha_ingreso');
             $table->date('fecha_egreso');
             $table->unsignedBigInteger('categoria_id');
+            $table->unsignedBigInteger('nivel_academico_id');
             $table->unsignedBigInteger('profesion_id');
             $table->string('especialidad', 100)->nullable();
             $table->string('ocupacion', 100)->nullable();
             $table->string('instagram', 60);
             $table->string('twitter', 60);
-            $table->string('pais', 5);
+            $table->string('cod_pais',10);
             $table->string('estado', 100);
             $table->string('ciudad', 100)->nullable();
             $table->string('sector', 100)->nullable();
@@ -36,6 +38,8 @@ class CreateDatosPersonasTable extends Migration
             $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->foreign('promocion_id')->references('id')->on('promocions');
             $table->foreign('profesion_id')->references('id')->on('profesions');
+            $table->foreign('nivel_academico_id')->references('id')->on('nivel_academicos');
+            $table->foreign('cod_pais')->references('codigo')->on('pais');
         });
     }
 

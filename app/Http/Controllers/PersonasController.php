@@ -6,6 +6,8 @@ use App\datosPersona;
 use App\promocion;
 use App\categoria;
 use App\profesion;
+use App\nivel_academico;
+use App\pais;
 
 use Carbon\Carbon;
 
@@ -34,20 +36,6 @@ class PersonasController extends Controller
                 'estado.required' => 'El campo estados es obligatorio',
             ];
 
-    public function listarPersonas(){
-        $personas = datosPersona::all();
-        return view('personas.listarPersonas' , compact('personas'));
-    }
-
-    public function viewRegistrarPersona(){
-
-        $promociones = promocion::all();
-        $categorias = categoria::all();
-        $profesiones = profesion::all();
-
-        return view('personas.registrarPersona', compact('promociones', 'categorias', 'profesiones'));
-    }
-
     /**
     *   Contiene todas las validaciones de los formularios para el registro y 
     *   actualizacion de la persona
@@ -55,28 +43,52 @@ class PersonasController extends Controller
     public function validacionesFormulario(Request $request){
         $rules = [
             'nombres' => 'required|max:100',
+            'apodos' => 'required|max:100',
             'primer_apellido' => 'required|max:50',
             'segundo_apellido' => 'max:50',
             'cedula' => 'required|unique:datos_personas|max:10',
             'correo' => 'required|email|unique:datos_personas|max:60',
-            'telefono' => 'required|max:15',
+            'telefono' => 'required|max:50',
             'fecha_nacimiento' => 'required',
             'promocion_id' => 'required',
             'fecha_ingreso' => 'required',
             'fecha_egreso' => 'required',
             'categoria_id' => 'required',
+            'nivel_academico_id' => 'required',
             'profesion_id' => 'required',
             'especialidad' => 'max:100',
             'ocupacion' => 'max:100',
             'instagram' => 'max:60',
             'twitter' => 'max:60',
-            'pais' => 'required|max:5',
+            'cod_pais' => 'required|max:10',
             'estado' => 'required|max:100',
             'ciudad' => 'max:100',
             'Sector' => 'max:100'
         ];
 
         $this->validate($request, $rules, $this->mensajes);
+    }
+
+    /**
+     * Carga la vista para listar personas
+     */
+    public function listarPersonas(){
+        $personas = datosPersona::all();
+        return view('personas.listarPersonas' , compact('personas'));
+    }
+
+    /**
+     * Carga la vista para registrar personas
+     */
+    public function viewRegistrarPersona(){
+
+        $promociones = promocion::all();
+        $categorias = categoria::all();
+        $profesiones = profesion::all();
+        $nivelesAcademicos = nivel_academico::all();
+        $paises = pais::all();
+
+        return view('personas.registrarPersona', compact('promociones', 'categorias', 'profesiones', 'nivelesAcademicos', 'paises'));
     }
 
     /**
@@ -114,8 +126,10 @@ class PersonasController extends Controller
         $promociones = promocion::all();
         $categorias = categoria::all();
         $profesiones = profesion::all();
+        $nivelesAcademicos = nivel_academico::all();
+        $paises = pais::all();
 
-        return view('personas.editarPersona', compact('datosPersona', 'promociones', 'categorias', 'profesiones'));
+        return view('personas.editarPersona', compact('datosPersona', 'promociones', 'categorias', 'profesiones', 'nivelesAcademicos', 'paises'));
     }
 
     /**
@@ -125,22 +139,24 @@ class PersonasController extends Controller
 
         $rules = [
             'nombres' => 'required|max:100',
+            'apodos' => 'required|max:100',
             'primer_apellido' => 'required|max:50',
             'segundo_apellido' => 'max:50',
             'cedula' => ['required',Rule::unique('datos_personas')->ignore($datosPersona->id),'max:10'],
             'correo' => ['required', 'email', Rule::unique('datos_personas')->ignore($datosPersona->id), 'max:60'],
-            'telefono' => 'required|max:15',
+            'telefono' => 'required|max:50',
             'fecha_nacimiento' => 'required',
             'promocion_id' => 'required',
             'fecha_ingreso' => 'required',
             'fecha_egreso' => 'required',
             'categoria_id' => 'required',
+            'nivel_academico_id' => 'required',
             'profesion_id' => 'required',
             'especialidad' => 'max:100',
             'ocupacion' => 'max:100',
             'instagram' => 'max:60',
             'twitter' => 'max:60',
-            'pais' => 'required|max:5',
+            'cod_pais' => 'required|max:10',
             'estado' => 'required|max:100',
             'ciudad' => 'max:100',
             'Sector' => 'max:100'

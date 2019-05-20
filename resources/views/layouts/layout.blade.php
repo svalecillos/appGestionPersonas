@@ -122,7 +122,13 @@
                             <li><a href="{{ route('listarCategorias') }}" class="waves-effect waves-cyan">Categoria</a></li>
                           </ul>
                           <ul>     
-                            <li><a href="#">Profesion</a></li>
+                            <li><a href="{{ route('listarProfesion') }}">Profesion</a></li>
+                          </ul>
+                          <ul>     
+                            <li><a href="{{ route('listarPromociones') }}">Promocion</a></li>
+                          </ul>
+                          <ul>     
+                            <li><a href="{{ route('listarNivelAcademico') }}">Nivel academico</a></li>
                           </ul>
                         </div>
                     </li>
@@ -202,7 +208,6 @@
     <script type="text/javascript" src="{{ asset('vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="{{ asset('js/plugins.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/battuta.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendors/data-tables/js/jquery.dataTables.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vendors/data-tables/data-tables-script.js') }}"></script>
   </body>
