@@ -12,6 +12,11 @@
                     <li><a href="{{ route('listarPersonas') }}">Personas</a></li>
                     <li class="active">Nuevo</a></li>
                 </ol>-->
+                <ol class="breadcrumbs">
+                    <li><a href="{{ route('principal') }}">Inicio</a></li>
+                    <li><a href="{{ route('buscarPersonas') }}">Buscar</a></li>
+                    <li class="active">Nuevo</a></li>
+                </ol>
             </div>
         </div>
     </div>

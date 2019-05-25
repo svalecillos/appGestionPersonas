@@ -30,4 +30,22 @@ class NivelAcademicoController extends Controller
 
     	return redirect()->route('listarNivelAcademico')->with('mensaje','El nivel academico ha sido registrado satisfactoriamente');
     }
+
+    public function viewNivelAcademicoEditar($id){
+        $nivelAcademico = nivel_academico::find($id);
+
+        return view('nivelAcademico.editarNivelAcademico', compact('nivelAcademico'));
+    }
+
+    public function editarNivelAcademico(nivel_academico $nivelAcademico, Request $request){
+        $rules = [
+    		'descripcion' => 'required|max:50',
+    	];
+
+    	$this->validate($request, $rules, $this->mensajes);
+    	
+    	$nivelAcademico->update($request->all());
+
+    	return redirect()->route('listarNivelAcademico')->with('mensaje','El nivel academico fue actualizado satisfactoriamente');
+    }
 }

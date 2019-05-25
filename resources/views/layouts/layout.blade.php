@@ -52,7 +52,7 @@
                 <a href={{ route('principal') }} class="waves-effect waves-cyan">Inicio</a>
               </li>
               <li>
-                <a href={{ route('cargarVistaRegistrarPersona') }} class="waves-effect waves-cyan">Formulario</a>
+                <a href={{ route('buscarPersonas') }} class="waves-effect waves-cyan">Buscar persona</a>
               </li>
             </ul>
             <ul class="right hide-on-med-and-down">

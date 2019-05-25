@@ -7,6 +7,12 @@
 Route::get('/', 'HomeController@index')
     ->name('principal');
 
+//Buscador personas
+Route::get('buscar', 'BuscadorController@index')
+    ->name('buscarPersonas');
+
+Route::post('buscando_datos', 'BuscadorController@buscarPersona');
+
 //Modulo gestion personas
 Route::get('personas', 'PersonasController@listarPersonas')
     ->name('listarPersonas');
