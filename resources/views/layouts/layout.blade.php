@@ -16,7 +16,7 @@
     <!-- For Windows Phone -->
     <!-- CORE CSS-->
     <link href="{{ asset('css/materialize.css') }}" type="text/css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
     <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet">
