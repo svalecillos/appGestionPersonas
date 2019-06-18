@@ -1,0 +1,11 @@
+COPY profesions(id,descripcion) FROM 'C:\tablas\profesion.txt' DELIMITER ';' CSV HEADER;
+COPY nivel_academicos(id,descripcion) FROM 'C:\tablas\nivel_academico.txt' DELIMITER ';' CSV HEADER;
+COPY categorias(id,descripcion) FROM 'C:\tablas\categoria.txt' DELIMITER ';' CSV HEADER;
+COPY promocions(id,descripcion) FROM 'C:\tablas\promocion.txt' DELIMITER ';' CSV HEADER;
+COPY pais(id,codigo,descripcion) FROM 'C:\tablas\paises.txt' DELIMITER ';' CSV HEADER;
+COPY datos_personas(id,cedula,fecha_nacimiento,apodos,
+				   nombres,primer_apellido,segundo_apellido,
+				   telefono,correo,promocion_id,fecha_ingreso,
+				   fecha_egreso,categoria_id,nivel_academico_id,profesion_id,
+				   especialidad,ocupacion,instagram,twitter,cod_pais,
+				   estado,ciudad,sector) FROM 'C:\tablas\personas.txt' DELIMITER ';' CSV HEADER;

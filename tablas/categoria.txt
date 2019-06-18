@@ -1,0 +1,5 @@
+﻿id;descripcion
+1;ALUMNO
+2;ALUMNO - B/M
+3;OFICIAL
+4;PROFESOR
