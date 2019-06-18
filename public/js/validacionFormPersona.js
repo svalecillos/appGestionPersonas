@@ -18,33 +18,33 @@ $(document).ready(function () {
                 maxlength: 10,
             },
             correo:{
-                required: true,
+                required: false,
                 email: true,
                 maxlength: 60,
             },
             telefono:{
-                required: true,
-                minlength: 11,
-                maxlength: 11,
+                required: false,
+                /*minlength: 11,
+                maxlength: 11,*/
                 number: true,
             },
             fecha_nacimiento:{
-                required: true,
+                required: false,
             },
             promocion_id: {
-                required: true,
+                required: false,
             },
             fecha_ingreso: {
-                required: true,
+                required: false,
             },
             fecha_egreso: {
-                required: true,
+                required: false,
             },
             categoria_id: {
                 required: true,
             },
             profesion_id: {
-                required: true,
+                required: false,
             },
             especialidad: {
                 maxlength: 100,
@@ -59,10 +59,13 @@ $(document).ready(function () {
                 maxlength: 60,
             },
             pais: {
-                required: true,
+                required: false,
             },
             estado: {
-                required: true,
+                required: false,
+            },
+            ciudad: {
+                maxlength: 100,
             },
             sector: {
                 maxlength: 100,
@@ -93,8 +96,8 @@ $(document).ready(function () {
             },
             telefono:{
                 required: "Requiere el telefono",
-                minlength: "Debe contener 11 caracteres",
-                maxlength: "Debe contener 11 caracteres",
+                /*minlength: "Debe contener 11 caracteres",
+                maxlength: "Debe contener 11 caracteres",*/
                 number: "El campo solo acepta numeros",
             },
             fecha_nacimiento:{
@@ -136,8 +139,11 @@ $(document).ready(function () {
             estado: {
                 required: "El estado debe ser obligatorio",
             },
+            ciudad: {
+                maxlength: "La ciudad debe contener un maximo de 100 caracteres",
+            },
             sector: {
-                maxlength: "El sector de contener un maximo de 100 caracteres",
+                maxlength: "El sector debe contener un maximo de 100 caracteres",
             }
         },
         errorElement: 'div',

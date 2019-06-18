@@ -30,7 +30,6 @@
                     <th>Nombres</th>                    
                     <th>Telefono</th>
                     <th>Correo</th>
-                    <th>Profesion</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -47,7 +46,6 @@
                         </td>
                         <td>{{ $persona->telefono }}</td>
                         <td>{{ $persona->correo }}</td>
-                        <td>{{ $persona->profesion->descripcion }}</td>
                         <td>
                             <a href="{{ route('cargarVistaEditarPersona',['id' => $persona->id]) }}" 
                                 class="btn waves-effect waves-light cyan">Ver</a>

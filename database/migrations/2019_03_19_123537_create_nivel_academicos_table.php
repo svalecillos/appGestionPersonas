@@ -16,7 +16,7 @@ class CreateNivelAcademicosTable extends Migration
         Schema::create('nivel_academicos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('descripcion', 100);
-            $table->boolean('status')->default(true);
+            $table->boolean('status')->default(true)->nullable();
             $table->timestamps();
         });
     }
