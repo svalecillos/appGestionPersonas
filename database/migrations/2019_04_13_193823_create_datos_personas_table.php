@@ -19,8 +19,8 @@ class CreateDatosPersonasTable extends Migration
             $table->string('telefono', 50)->nullable();
             $table->string('correo', 60)->unique()->nullable();
             $table->unsignedBigInteger('promocion_id')->nullable();
-            $table->date('fecha_ingreso')->nullable();
-            $table->date('fecha_egreso')->nullable();
+            $table->string('fecha_ingreso')->nullable();
+            $table->string('fecha_egreso')->nullable();
             $table->unsignedBigInteger('categoria_id')->nullable();
             $table->unsignedBigInteger('nivel_academico_id')->nullable();
             $table->unsignedBigInteger('profesion_id')->nullable();

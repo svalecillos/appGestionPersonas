@@ -16,6 +16,17 @@ class BuscadorController extends Controller
         'cedula.required' => 'El campo cedula es obligatorio',
     ];
 
+    public function crearSelectAnio(){
+
+        $arrAnio = [];
+
+        for($i=1950; $i<=2030;$i++){
+            array_push($arrAnio, $i);
+        }
+
+        return $arrAnio;
+    }
+
     public function index(){
         return view('buscador.buscador');
     }
@@ -32,6 +43,7 @@ class BuscadorController extends Controller
         $datosPersona = datosPersona::where('cedula',$request->cedula)->get();
         
         //Listas Catalogos
+        $anios = $this->crearSelectAnio();
         $promociones = promocion::all();
         $categorias = categoria::all();
         $profesiones = profesion::all();
@@ -44,12 +56,12 @@ class BuscadorController extends Controller
             $datosPersona = $datosPersona->first();
             return view('personas.editarPersona', compact('datosPersona', 'promociones', 
                                                             'categorias', 'profesiones', 
-                                                            'nivelesAcademicos', 'paises'));
+                                                            'nivelesAcademicos', 'paises','anios'));
         }
 
         //Si no, ira al formulario del registro
         return view('personas.registrarPersona', compact('promociones', 'categorias', 
                                                           'profesiones', 'nivelesAcademicos', 
-                                                          'paises'));
+                                                          'paises','anios'));
     }
 }

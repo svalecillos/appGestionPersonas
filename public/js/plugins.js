@@ -5,6 +5,14 @@
     }, 200);
   });
 
+  //Convierte en mayusculas los valores de un input
+  $(".upperCase").on("keypress", function () {
+    $input=$(this);
+    setTimeout(function () {
+     $input.val($input.val().toUpperCase());
+    },50);
+   })
+
   $(function() {
 
     "use strict";

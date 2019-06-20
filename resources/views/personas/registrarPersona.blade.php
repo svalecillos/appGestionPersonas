@@ -31,13 +31,13 @@
                                 <!--Campo nombres-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input id="nombres" type="text" name="nombres" class="validate" value="{{ old('nombres') }}">
+                                    <input id="nombres" type="text" name="nombres" class="validate upperCase" value="{{ old('nombres') }}">
                                     <label for="icon_prefix">Nombres</label>
                                 </div>
                                 <!--Campo apodos nuevo-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input id="apodos" type="text" name="apodos" class="validate" value="{{ old('apodos') }}">
+                                    <input id="apodos" type="text" name="apodos" class="validate upperCase" value="{{ old('apodos') }}">
                                     <label for="icon_prefix">Apodos</label>
                                 </div>
                             </div>
@@ -45,13 +45,13 @@
                                 <!--Campo primer apellido-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input type="text" id="primer_apellido"  name="primer_apellido" class="validate" value="{{ old('primer_apellido') }}">
+                                    <input type="text" id="primer_apellido"  name="primer_apellido" class="validate upperCase" value="{{ old('primer_apellido') }}">
                                     <label for="icon_prefix">Primer apellido</label>
                                 </div>
                                 <!--Campo segundo apellido-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input type="text" id="segundo_apellido" name="segundo_apellido" class="validate" value="{{ old('segundo_apellido') }}">
+                                    <input type="text" id="segundo_apellido" name="segundo_apellido" class="validate upperCase" value="{{ old('segundo_apellido') }}">
                                     <label for="icon_prefix">Segundo apellido</label>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                 <!--Campo correo-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">email</i>
-                                    <input type="email" id="correo" name="correo" class="validate" value="{{ old('correo') }}">
+                                    <input type="email" id="correo" name="correo" class="validate upperCase" value="{{ old('correo') }}">
                                     <label for="icon_prefix">Correo</label>
                                 </div>
                             </div>
@@ -100,17 +100,29 @@
                                 </select>
                                 <label for="icon_prefix">Promoci&oacute;n</label>
                             </div>
-                            <!--Campo Fecha de ingreso-->
+                            <!--Campo Anio de ingreso-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">date_range</i>
-                                <input type="text" id="fecha_ingreso" class="datepicker" name="fecha_ingreso" value="{{ old('fecha_ingreso') }}">
-                                <label for="icon_prefix">Fecha de ingreso</label>
+                                <select id="fecha_ingreso" name="fecha_ingreso" class="validate" value="{{ old('fecha_ingreso') }}">
+                                    <option value="" disabled selected>Selecciona una opcion</option>
+                                    @foreach($anios as $anio)
+                                        <option value="{{ $anio }}">{{ $anio }}</option>
+                                    @endforeach
+                                </select>
+                                <!--<input type="text" id="fecha_ingreso" class="datepicker" name="fecha_ingreso" value="{{ old('fecha_ingreso') }}">-->
+                                <label for="icon_prefix">Año de ingreso</label>
                             </div>
-                            <!--Campo Fecha de egreso -->
+                            <!--Campo Anio de egreso -->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">date_range</i>
-                                <input type="text" id="fecha_egreso" class="datepicker" name="fecha_egreso" value="{{ old('fecha_egreso') }}">
-                                <label for="icon_prefix">Fecha de egreso</label>
+                                <select id="fecha_egreso" name="fecha_egreso" class="validate" value="{{ old('fecha_egreso') }}">
+                                    <option value="" disabled selected>Selecciona una opcion</option>
+                                    @foreach($anios as $anio)
+                                        <option value="{{ $anio }}">{{ $anio }}</option>
+                                    @endforeach
+                                </select>
+                                <!--<input type="text" id="fecha_egreso" class="datepicker" name="fecha_egreso" value="{{ old('fecha_egreso') }}">-->
+                                <label for="icon_prefix">Año de egreso</label>
                             </div>
                             <!--Campo categoria-->
                             <div class="input-field col s6">
@@ -157,13 +169,13 @@
                             <!--Campo especialidad-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">business_center</i>
-                                <input type="text" id="especialidad" name="especialidad" class="validate" value="{{ old('especialidad') }}">
+                                <input type="text" id="especialidad" name="especialidad" class="validate upperCase" value="{{ old('especialidad') }}">
                                 <label for="icon_prefix">Especialidad</label>
                             </div>
                             <!--Campo ocupacion-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">business_center</i>
-                                <input type="text" id="ocupacion" name="ocupacion" class="validate" value="{{ old('ocupacion') }}">
+                                <input type="text" id="ocupacion" name="ocupacion" class="validate upperCase" value="{{ old('ocupacion') }}">
                                 <label for="icon_prefix">Ocupacion</label>
                             </div>
                         </div>
@@ -171,13 +183,13 @@
                             <!--Campo especialidad-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">business_center</i>
-                                <input type="text" id="instagram" name="instagram" class="validate" value="{{ old('instagram') }}">
+                                <input type="text" id="instagram" name="instagram" class="validate upperCase" value="{{ old('instagram') }}">
                                 <label for="icon_prefix">Instagram</label>
                             </div>
                             <!--Campo ocupacion-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">business_center</i>
-                                <input type="text" id="twitter" name="twitter" class="validate" value="{{ old('twitter') }}">
+                                <input type="text" id="twitter" name="twitter" class="validate upperCase" value="{{ old('twitter') }}">
                                 <label for="icon_prefix">Twitter</label>
                             </div>
                         </div>
@@ -201,7 +213,7 @@
                             <!--Campo estados-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">public</i>
-                                <input type="text" id="estado" name="estado" class="validate" value="{{ old('estado') }}">
+                                <input type="text" id="estado" name="estado" class="validate upperCase" value="{{ old('estado') }}">
                                 <label for="icon_prefix">Estado</label>
                             </div>
                         </div>
@@ -209,13 +221,13 @@
                             <!--Campo ciudades-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">public</i>
-                                <input type="text" id="ciudad" name="ciudad" class="validate" value="{{ old('ciudad') }}">
+                                <input type="text" id="ciudad" name="ciudad" class="validate upperCase" value="{{ old('ciudad') }}">
                                 <label for="icon_prefix">Ciudad</label>
                             </div>
                             <!--Campo sector-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">public</i>
-                                <input type="text" id="sector" name="sector" class="validate" value="{{ old('sector') }}">
+                                <input type="text" id="sector" name="sector" class="validate upperCase" value="{{ old('sector') }}">
                                 <label for="icon_prefix">Sector</label>
                             </div>
                         </div>

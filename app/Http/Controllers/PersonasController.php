@@ -69,6 +69,17 @@ class PersonasController extends Controller
         $this->validate($request, $rules, $this->mensajes);
     }
 
+    public function crearSelectAnio(){
+
+        $arrAnio = [];
+
+        for($i=1950; $i<=2030;$i++){
+            array_push($arrAnio, $i);
+        }
+
+        return $arrAnio;
+    }
+
     /**
      * Carga la vista para listar personas
      */
@@ -81,14 +92,16 @@ class PersonasController extends Controller
      * Carga la vista para registrar personas
      */
     public function viewRegistrarPersona(){
-
+        
+        $anios = $this->crearSelectAnio();
         $promociones = promocion::all();
         $categorias = categoria::all();
         $profesiones = profesion::all();
         $nivelesAcademicos = nivel_academico::all();
         $paises = pais::all();
 
-        return view('personas.registrarPersona', compact('promociones', 'categorias', 'profesiones', 'nivelesAcademicos', 'paises'));
+        return view('personas.registrarPersona', compact('promociones', 'categorias', 'profesiones', 
+                                                'nivelesAcademicos', 'paises', 'anios'));
     }
 
     /**
@@ -100,11 +113,12 @@ class PersonasController extends Controller
 
         $this->validacionesFormulario($request);
 
-        $datosPersona->fill($request->except(['fecha_nacimiento', 'fecha_ingreso', 'fecha_egreso']));
+        //$datosPersona->fill($request->except(['fecha_nacimiento', 'fecha_ingreso', 'fecha_egreso']));
+        $datosPersona->fill($request->except(['fecha_nacimiento']));
 
         $datosPersona->fecha_nacimiento= Carbon::parse($request->fecha_nacimiento)->format('Y-m-d');
-        $datosPersona->fecha_ingreso= Carbon::parse($request->fecha_ingreso)->format('Y-m-d');
-        $datosPersona->fecha_egreso= Carbon::parse($request->fecha_egreso)->format('Y-m-d');
+        /*$datosPersona->fecha_ingreso= Carbon::parse($request->fecha_ingreso)->format('Y-m-d');
+        $datosPersona->fecha_egreso= Carbon::parse($request->fecha_egreso)->format('Y-m-d');*/
 
         //dd($datosPersona);
         $datosPersona->save();
@@ -120,16 +134,18 @@ class PersonasController extends Controller
         $datosPersona = datosPersona::find($id);
 
         $datosPersona->fecha_nacimiento= Carbon::parse($datosPersona->fecha_nacimiento)->format('d-m-Y');
-        $datosPersona->fecha_ingreso= Carbon::parse($datosPersona->fecha_ingreso)->format('d-m-Y');
-        $datosPersona->fecha_egreso= Carbon::parse($datosPersona->fecha_egreso)->format('d-m-Y');
+        /*$datosPersona->fecha_ingreso= Carbon::parse($datosPersona->fecha_ingreso)->format('d-m-Y');
+        $datosPersona->fecha_egreso= Carbon::parse($datosPersona->fecha_egreso)->format('d-m-Y');*/
 
+        $anios = $this->crearSelectAnio();
         $promociones = promocion::all();
         $categorias = categoria::all();
         $profesiones = profesion::all();
         $nivelesAcademicos = nivel_academico::all();
         $paises = pais::all();
 
-        return view('personas.editarPersona', compact('datosPersona', 'promociones', 'categorias', 'profesiones', 'nivelesAcademicos', 'paises'));
+        return view('personas.editarPersona', compact('datosPersona', 'promociones', 'categorias', 
+                                            'profesiones', 'nivelesAcademicos', 'paises', 'anios'));
     }
 
     /**
@@ -164,11 +180,12 @@ class PersonasController extends Controller
 
         $this->validate($request, $rules, $this->mensajes);
 
-        $datosPersona->fill($request->except(['fecha_nacimiento', 'fecha_ingreso', 'fecha_egreso']));
+        /*$datosPersona->fill($request->except(['fecha_nacimiento', 'fecha_ingreso', 'fecha_egreso']));*/
+        $datosPersona->fill($request->except(['fecha_nacimiento']));
 
         $datosPersona->fecha_nacimiento= Carbon::parse($request->fecha_nacimiento)->format('Y-m-d');
-        $datosPersona->fecha_ingreso= Carbon::parse($request->fecha_ingreso)->format('Y-m-d');
-        $datosPersona->fecha_egreso= Carbon::parse($request->fecha_egreso)->format('Y-m-d');
+        /*$datosPersona->fecha_ingreso= Carbon::parse($request->fecha_ingreso)->format('Y-m-d');
+        $datosPersona->fecha_egreso= Carbon::parse($request->fecha_egreso)->format('Y-m-d');*/
 
         $datosPersona->save();
 
