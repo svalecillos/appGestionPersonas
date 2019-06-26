@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
@@ -61,15 +63,22 @@
                   <i class="material-icons">settings_overscan</i>
                 </a>
               </li>
-              <li><a href="#" class="waves-effect waves-cyan">Login</a></li>
-              <!--<li>
-                <a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
-                  <span class="avatar-status avatar-online">
-                    <img src="{{ asset('images/avatar/avatar-7.png') }}" alt="avatar">
-                    <i></i>
-                  </span>
+              @guest
+              <li>
+                <a href={{ route('login') }} class="waves-effect waves-cyan">Login</a>
+              </li>
+              @endguest
+              @auth
+              <li>
+                <a href="{{ route('logout') }}" class="waves-effect waves-cyan" 
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  Salir
                 </a>
-              </li>-->
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+              </li>
+              @endauth
             </ul>
             <!-- profile-dropdown -->
             <ul id="profile-dropdown" class="dropdown-content">
@@ -96,8 +105,10 @@
     <!-- START MAIN -->
     <div id="main">
       <!-- START WRAPPER -->
+      
       <div class="wrapper">
         <!-- START LEFT SIDEBAR NAV-->
+        @auth
         <aside id="left-sidebar-nav">
           <ul id="slide-out" class="collapsible side-nav fixed leftside-navigation">
             <li class="no-padding">
@@ -141,6 +152,7 @@
             <i class="material-icons">menu</i>
           </a>
         </aside>
+        @endauth
         <!-- END LEFT SIDEBAR NAV-->
         <!-- START CONTENT -->
         <section id="content">

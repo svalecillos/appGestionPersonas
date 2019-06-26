@@ -7,14 +7,14 @@
         <div class="row">
             <div class="col s10 m6 l6">
                 <h5 class="breadcrumbs-title">Registrar persona</h5>
-                <!--<ol class="breadcrumbs">
-                    <li><a href="{{ route('principal') }}">Inicio</a></li>
-                    <li><a href="{{ route('listarPersonas') }}">Personas</a></li>
-                    <li class="active">Nuevo</a></li>
-                </ol>-->
                 <ol class="breadcrumbs">
                     <li><a href="{{ route('principal') }}">Inicio</a></li>
+                    @guest
                     <li><a href="{{ route('buscarPersonas') }}">Buscar</a></li>
+                    @endguest
+                    @auth
+                    <li><a href="{{ route('listarPersonas') }}">Personas</a></li>
+                    @endauth
                     <li class="active">Nuevo</a></li>
                 </ol>
             </div>

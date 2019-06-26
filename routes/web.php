@@ -7,6 +7,10 @@
 Route::get('/', 'HomeController@index')
     ->name('principal');
 
+//Login
+Route::get('login', 'LoginController@index')
+    ->name('login');
+
 //Buscador personas
 Route::get('buscar', 'BuscadorController@index')
     ->name('buscarPersonas');
@@ -105,3 +109,6 @@ Route::get('administrativo/nivel_academico/detalle/{id}', 'NivelAcademicoControl
 
 Route::put('nivel_academico/actualizar/{nivel_academico}', 'NivelAcademicoController@editarNivelAcademico')
 	->name('actualizarNivelAcademico');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
