@@ -180,17 +180,31 @@
                             </div>
                         </div>
                         <div class="row">
-                            <!--Campo especialidad-->
+                            <!--Campo Instagram-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">business_center</i>
                                 <input type="text" id="instagram" name="instagram" class="validate upperCase" value="{{ old('instagram') }}">
                                 <label for="icon_prefix">Instagram</label>
                             </div>
-                            <!--Campo ocupacion-->
+                            <!--Campo twitter-->
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">business_center</i>
                                 <input type="text" id="twitter" name="twitter" class="validate upperCase" value="{{ old('twitter') }}">
                                 <label for="icon_prefix">Twitter</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!--Campo linkeding-->
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">business_center</i>
+                                <input type="text" id="linkeding" name="linkeding" class="validate upperCase" value="{{ old('linkeding') }}">
+                                <label for="icon_prefix">linkeding</label>
+                            </div>
+                            <!--Campo facebook-->
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">business_center</i>
+                                <input type="text" id="facebook" name="facebook" class="validate upperCase" value="{{ old('facebook') }}">
+                                <label for="icon_prefix">facebook</label>
                             </div>
                         </div>
                     </div>

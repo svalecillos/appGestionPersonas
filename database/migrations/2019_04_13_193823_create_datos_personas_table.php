@@ -28,6 +28,8 @@ class CreateDatosPersonasTable extends Migration
             $table->string('ocupacion', 100)->nullable();
             $table->string('instagram', 60)->nullable();
             $table->string('twitter', 60)->nullable();
+            $table->string('linkeding', 60)->nullable();
+            $table->string('facebook', 60)->nullable();
             $table->string('cod_pais',10)->nullable();
             $table->string('estado', 100)->nullable();
             $table->string('ciudad', 100)->nullable();

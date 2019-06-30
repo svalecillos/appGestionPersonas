@@ -58,6 +58,12 @@ $(document).ready(function () {
             twitter: {
                 maxlength: 60,
             },
+            linkeding: {
+                maxlength: 60,
+            },
+            facebook: {
+                maxlength: 60,
+            },
             pais: {
                 required: false,
             },
@@ -131,6 +137,12 @@ $(document).ready(function () {
                 maxlength: "Debe tener un maximo de 60 caracteres",
             },
             twitter: {
+                maxlength: "Debe tener un maximo de 60 caracteres",
+            },
+            linkeding: {
+                maxlength: "Debe tener un maximo de 60 caracteres",
+            },
+            facebook: {
                 maxlength: "Debe tener un maximo de 60 caracteres",
             },
             pais: {

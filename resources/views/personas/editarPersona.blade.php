@@ -194,6 +194,20 @@
                                 <label for="icon_prefix">Twitter</label>
                             </div>
                         </div>
+                        <div class="row">
+                            <!--Campo linkeding-->
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">business_center</i>
+                                <input type="text" id="linkeding" name="linkeding" class="validate upperCase" value="{{ old('linkeding', $datosPersona->linkeding) }}">
+                                <label for="icon_prefix">linkeding</label>
+                            </div>
+                            <!--Campo facebook-->
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">business_center</i>
+                                <input type="text" id="facebook" name="facebook" class="validate upperCase" value="{{ old('facebook', $datosPersona->facebook) }}">
+                                <label for="icon_prefix">facebook</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="card-panel">

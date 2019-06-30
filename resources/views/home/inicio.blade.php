@@ -3,5 +3,5 @@
 @section('title', 'Inicio')
 
 @section('content')
-    <h1>Hola mundo</h1>
+    <h1>Control de amigos</h1>
 @endsection

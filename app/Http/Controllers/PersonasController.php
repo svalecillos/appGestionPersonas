@@ -60,6 +60,8 @@ class PersonasController extends Controller
             'ocupacion' => 'max:100',
             'instagram' => 'max:60',
             'twitter' => 'max:60',
+            'linkeding' => 'max:60',
+            'facebook' => 'max:60',
             'cod_pais' => 'max:10',
             'estado' => 'max:100',
             'ciudad' => 'max:100',
@@ -117,10 +119,7 @@ class PersonasController extends Controller
         $datosPersona->fill($request->except(['fecha_nacimiento']));
 
         $datosPersona->fecha_nacimiento= Carbon::parse($request->fecha_nacimiento)->format('Y-m-d');
-        /*$datosPersona->fecha_ingreso= Carbon::parse($request->fecha_ingreso)->format('Y-m-d');
-        $datosPersona->fecha_egreso= Carbon::parse($request->fecha_egreso)->format('Y-m-d');*/
 
-        //dd($datosPersona);
         $datosPersona->save();
 
         return redirect()->route('principal')->with('mensaje','La persona ha sido registrada satisfactoriamente');
@@ -134,8 +133,6 @@ class PersonasController extends Controller
         $datosPersona = datosPersona::find($id);
 
         $datosPersona->fecha_nacimiento= Carbon::parse($datosPersona->fecha_nacimiento)->format('d-m-Y');
-        /*$datosPersona->fecha_ingreso= Carbon::parse($datosPersona->fecha_ingreso)->format('d-m-Y');
-        $datosPersona->fecha_egreso= Carbon::parse($datosPersona->fecha_egreso)->format('d-m-Y');*/
 
         $anios = $this->crearSelectAnio();
         $promociones = promocion::all();
@@ -172,6 +169,8 @@ class PersonasController extends Controller
             'ocupacion' => 'max:100',
             'instagram' => 'max:60',
             'twitter' => 'max:60',
+            'linkeding' => 'max:60',
+            'facebook' => 'max:60',
             'cod_pais' => 'max:10',
             'estado' => 'max:100',
             'ciudad' => 'max:100',
@@ -184,8 +183,6 @@ class PersonasController extends Controller
         $datosPersona->fill($request->except(['fecha_nacimiento']));
 
         $datosPersona->fecha_nacimiento= Carbon::parse($request->fecha_nacimiento)->format('Y-m-d');
-        /*$datosPersona->fecha_ingreso= Carbon::parse($request->fecha_ingreso)->format('Y-m-d');
-        $datosPersona->fecha_egreso= Carbon::parse($request->fecha_egreso)->format('Y-m-d');*/
 
         $datosPersona->save();
 

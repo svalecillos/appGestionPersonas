@@ -42,20 +42,18 @@
         <nav class="navbar-color gradient-45deg-light-blue-cyan">
           <div class="nav-wrapper">
             <ul class="left">
-              <!--<li>
+              <li>
                 <h1 class="logo-wrapper">
-                  <a href="index.html" class="brand-logo darken-1">
+                  <a href="index.html" class="brand-logo">
                     <img src="{{ asset('images/logo/materialize-logo.png') }}" alt="materialize logo">
-                    <span class="logo-text hide-on-med-and-down">Materialize</span>
+                    <span class="logo-text hide-on-med-and-down">Sistema control de amigos</span>
                   </a>
                 </h1>
-              </li>-->
-              <li>
+              </li>
+              <!--<li>
                 <a href={{ route('principal') }} class="waves-effect waves-cyan">Inicio</a>
               </li>
-              <li>
-                <a href={{ route('buscarPersonas') }} class="waves-effect waves-cyan">Buscar persona</a>
-              </li>
+              -->
             </ul>
             <ul class="right hide-on-med-and-down">
               <li>
@@ -105,26 +103,35 @@
     <!-- START MAIN -->
     <div id="main">
       <!-- START WRAPPER -->
-      
       <div class="wrapper">
         <!-- START LEFT SIDEBAR NAV-->
-        @auth
+        
         <aside id="left-sidebar-nav">
           <ul id="slide-out" class="collapsible side-nav fixed leftside-navigation">
             <li class="no-padding">
               <ul class="collapsible" data-collapsible="accordion">
                 <li class="bold">
                   <a href={{ route('principal') }} class="waves-effect waves-cyan">
-                      <i class="material-icons">pie_chart_outlined</i>
+                    <i class="material-icons md-48">home</i>
                       <span class="nav-text">Inicio</span>
                     </a>
                 </li>
+                @guest
+                <li class="bold">
+                    <a href={{ route('buscarPersonas') }} class="waves-effect waves-cyan">
+                      <i class="material-icons">people</i>
+                      <span class="nav-text">Buscar personas</span>
+                    </a>
+                </li>
+                @endguest
+                @auth
                 <li class="bold">
                   <a href={{ route('listarPersonas') }} class="waves-effect waves-cyan">
-                      <i class="material-icons">pie_chart_outlined</i>
+                    <i class="material-icons">people</i>
                       <span class="nav-text">Personas</span>
                     </a>
                 </li>
+                
                 <li>
                   <ul class="collapsible collapsible-accordion">
                     <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="material-icons">pie_chart_outlined</i><span class="nav-text">Administracion</span></a>
@@ -145,6 +152,7 @@
                     </li>
                   </ul>
                 </li>
+                @endauth
               </ul>
             </li>
           </ul>
@@ -152,7 +160,7 @@
             <i class="material-icons">menu</i>
           </a>
         </aside>
-        @endauth
+        
         <!-- END LEFT SIDEBAR NAV-->
         <!-- START CONTENT -->
         <section id="content">
@@ -214,6 +222,8 @@
     <!--Validaciones formularios-->
     <script src="{{ asset('js/validacionFormPersona.js') }}"></script>
     <script src="{{ asset('js/validacionFormAdministracion.js') }}"></script>
+    <script src="{{ asset('js/validacionFormLogin.js') }}"></script>
+    <script src="{{ asset('js/validacionFormRegistrarUsuario.js') }}"></script>
     <!--materialize js-->
     <script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
     <!--scrollbar-->
