@@ -28,12 +28,27 @@
                 <div class="card-panel">
                     <div class="row">
                             <h4 class="header2">Datos personales</h4>
+                            <label class="materialize-red-text">**Campos obligatorios</label>
+                            <div class="row">
+                                <!--Campo cedula-->
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">contacts</i>
+                                    <input type="text" id="cedula"  name="cedula" class="validate" value="{{ old('cedula',$datosPersona->cedula) }}">
+                                    <label for="icon_prefix">Cedula**</label>
+                                </div>
+                                <!--Fecha de nacimiento-->
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">cake</i>
+                                    <input type="text" id="fecha_nacimiento" class="datepicker" name="fecha_nacimiento" value="{{ old('fecha_nacimiento', $datosPersona->fecha_nacimiento) }}">
+                                    <label for="icon_prefix">Fecha de nacimiento</label>
+                                </div>
+                            </div>
                             <div class="row">
                                 <!--Campo nombres-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
                                     <input id="nombres" type="text" name="nombres" class="validate upperCase" value="{{ old('nombres' ,$datosPersona->nombres) }}">
-                                    <label for="icon_prefix">Nombres</label>
+                                    <label for="icon_prefix">Nombres**</label>
                                 </div>
                                 <!--Campo apodos nuevo-->
                                 <div class="input-field col s6">
@@ -47,7 +62,7 @@
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">account_circle</i>
                                     <input type="text" id="primer_apellido"  name="primer_apellido" class="validate upperCase" value="{{ old('primer_apellido',$datosPersona->primer_apellido) }}">
-                                    <label for="icon_prefix">Primer apellido</label>
+                                    <label for="icon_prefix">Primer apellido**</label>
                                 </div>
                                 <!--Campo segundo apellido-->
                                 <div class="input-field col s6">
@@ -57,31 +72,17 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <!--Campo cedula-->
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">contacts</i>
-                                    <input type="text" id="cedula"  name="cedula" class="validate" value="{{ old('cedula',$datosPersona->cedula) }}">
-                                    <label for="icon_prefix">Cedula</label>
-                                </div>
-                                <!--Campo correo-->
-                                <div class="input-field col s6">
-                                    <i class="material-icons prefix">email</i>
-                                    <input type="email" id="correo" name="correo" class="validate upperCase" value="{{ old('correo', $datosPersona->correo) }}">
-                                    <label for="icon_prefix">Correo</label>
-                                </div>
-                            </div>
-                            <div class="row">
                                 <!--Campo telefono-->
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">call</i>
                                     <input type="text" id="telefono" name="telefono" class="validate upperCase" value="{{ old('telefono', $datosPersona->telefono) }}">
                                     <label for="icon_prefix">Telefono</label>
                                 </div>
-                                <!--Fecha de nacimiento-->
+                                <!--Campo correo-->
                                 <div class="input-field col s6">
-                                    <i class="material-icons prefix">cake</i>
-                                    <input type="text" id="fecha_nacimiento" class="datepicker" name="fecha_nacimiento" value="{{ old('fecha_nacimiento', $datosPersona->fecha_nacimiento) }}">
-                                    <label for="icon_prefix">Fecha de nacimiento</label>
+                                    <i class="material-icons prefix">email</i>
+                                    <input type="email" id="correo" name="correo" class="validate upperCase" value="{{ old('correo', $datosPersona->correo) }}">
+                                    <label for="icon_prefix">Correo</label>
                                 </div>
                             </div>
                     </div>
@@ -199,7 +200,7 @@
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">business_center</i>
                                 <input type="text" id="linkeding" name="linkeding" class="validate upperCase" value="{{ old('linkeding', $datosPersona->linkeding) }}">
-                                <label for="icon_prefix">linkeding</label>
+                                <label for="icon_prefix">linkedin</label>
                             </div>
                             <!--Campo facebook-->
                             <div class="input-field col s6">

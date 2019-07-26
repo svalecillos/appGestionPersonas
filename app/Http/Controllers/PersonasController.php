@@ -23,17 +23,6 @@ class PersonasController extends Controller
                 'primer_apellido.required' => 'El campo primer apellido es obligatorio',
                 'cedula.required' => 'El campo cedula es obligatorio',
                 'cedula.unique' => 'La cedula ya existe',
-                'correo.required' => 'El campo correo es obligatorio',
-                'correo.unique' => 'El correo ya esta registrado',
-                'telefono.required' => 'El campo telefono es obligatorio',
-                'fecha_nacimiento.required' => 'El campo fecha de nacimiento es obligatorio',
-                'promocion_id.required' => 'El campo promocion es obligatorio',
-                'fecha_ingreso.required' => 'El campo fecha de ingreso es obligatorio',
-                'fecha_egreso.required' => 'El campo fecha de egreso es obligatorio',
-                'categoria_id.required' => 'El campo categoria es obligatorio',
-                'profesion_id.required' => 'El campo profesion es obligatorio',
-                'pais.required' => 'El campo paises es obligatorio',
-                'estado.required' => 'El campo estados es obligatorio',
             ];
 
     /**
@@ -42,12 +31,12 @@ class PersonasController extends Controller
     **/
     public function validacionesFormulario(Request $request){
         $rules = [
-            'nombres' => 'required|max:100',
+            'nombres' => 'required|max:150',
             'apodos' => 'max:100',
-            'primer_apellido' => 'required|max:50',
-            'segundo_apellido' => 'max:50',
+            'primer_apellido' => 'required|max:100',
+            'segundo_apellido' => 'max:100',
             'cedula' => 'required|unique:datos_personas|max:10',
-            'correo' => 'email|unique:datos_personas|max:60',
+            'correo' => 'max:100',
             'telefono' => 'max:50',
             /*'fecha_nacimiento' => 'required',*/
             /*'promocion_id' => 'required',*/
@@ -60,8 +49,8 @@ class PersonasController extends Controller
             'ocupacion' => 'max:100',
             'instagram' => 'max:60',
             'twitter' => 'max:60',
-            'linkeding' => 'max:60',
-            'facebook' => 'max:60',
+            'linkeding' => 'max:150',
+            'facebook' => 'max:150',
             'cod_pais' => 'max:10',
             'estado' => 'max:100',
             'ciudad' => 'max:100',
@@ -151,12 +140,12 @@ class PersonasController extends Controller
     public function editarDatosPersona(datosPersona $datosPersona, Request $request){
 
         $rules = [
-            'nombres' => 'required|max:100',
+            'nombres' => 'required|max:150',
             'apodos' => 'max:100',
-            'primer_apellido' => 'required|max:50',
-            'segundo_apellido' => 'max:50',
+            'primer_apellido' => 'required|max:100',
+            'segundo_apellido' => 'max:100',
             'cedula' => ['required',Rule::unique('datos_personas')->ignore($datosPersona->id),'max:10'],
-            'correo' => ['email', Rule::unique('datos_personas')->ignore($datosPersona->id), 'max:60'],
+            'correo' => 'max:100',
             'telefono' => 'max:50',
             /*'fecha_nacimiento' => 'required',*/
             /*'promocion_id' => 'required',*/
@@ -169,8 +158,8 @@ class PersonasController extends Controller
             'ocupacion' => 'max:100',
             'instagram' => 'max:60',
             'twitter' => 'max:60',
-            'linkeding' => 'max:60',
-            'facebook' => 'max:60',
+            'linkeding' => 'max:150',
+            'facebook' => 'max:150',
             'cod_pais' => 'max:10',
             'estado' => 'max:100',
             'ciudad' => 'max:100',

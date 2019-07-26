@@ -3,14 +3,14 @@ $(document).ready(function () {
         rules: {
             nombres: {
                 required: true,
-                maxlength: 100,
+                maxlength: 150,
             },
             primer_apellido: {
                 required: true,
-                maxlength: 50,
+                maxlength: 100,
             },
             segundo_apellido: {
-                maxlength: 50,
+                maxlength: 100,
             },
             cedula:{
                 required: true,
@@ -20,7 +20,7 @@ $(document).ready(function () {
             correo:{
                 required: false,
                 email: true,
-                maxlength: 60,
+                maxlength: 100,
             },
             telefono:{
                 required: false,
@@ -41,7 +41,7 @@ $(document).ready(function () {
                 required: false,
             },
             categoria_id: {
-                required: true,
+                required: false,
             },
             profesion_id: {
                 required: false,
@@ -59,10 +59,10 @@ $(document).ready(function () {
                 maxlength: 60,
             },
             linkeding: {
-                maxlength: 60,
+                maxlength: 150,
             },
             facebook: {
-                maxlength: 60,
+                maxlength: 150,
             },
             pais: {
                 required: false,
@@ -81,14 +81,14 @@ $(document).ready(function () {
         messages: {
             nombres: {
                 required: "Requiere sus nombres",
-                maxlength: "El maximo de caracteres es de 4",
+                maxlength: "El maximo de caracteres es de 150",
             },
             primer_apellido: {
                 required: "Requiere su primer apellido",
-                maxlength: "El maximo de caracteres es de 50"
+                maxlength: "El maximo de caracteres es de 100"
             },
             segundo_apellido: {
-                maxlength: "El maximo de caracteres es de 50",
+                maxlength: "El maximo de caracteres es de 100",
             },
             cedula:{
                 required: "Requiere la cedula",
@@ -98,7 +98,7 @@ $(document).ready(function () {
             correo:{
                 required: "Requiere el correo",
                 email: "Tiene que ser un correo valido",
-                maxlength: "El maximo caracteres es de 60",
+                maxlength: "El maximo caracteres es de 100",
             },
             telefono:{
                 required: "Requiere el telefono",
@@ -140,10 +140,10 @@ $(document).ready(function () {
                 maxlength: "Debe tener un maximo de 60 caracteres",
             },
             linkeding: {
-                maxlength: "Debe tener un maximo de 60 caracteres",
+                maxlength: "Debe tener un maximo de 150 caracteres",
             },
             facebook: {
-                maxlength: "Debe tener un maximo de 60 caracteres",
+                maxlength: "Debe tener un maximo de 150 caracteres",
             },
             pais: {
                 required: "El pais debe ser obligatorio",

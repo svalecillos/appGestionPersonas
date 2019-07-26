@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'APP_URL=https://multicultural-pylon-91378.herokuapp.com/'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -121,7 +121,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomStringWith32Characters'),
+    'key' => env('APP_KEY' ,'SomeRandomStringWith32Characters'),
 
     'cipher' => 'AES-256-CBC',
 
