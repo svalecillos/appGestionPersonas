@@ -22,7 +22,7 @@
     </div>
     <div class="row">
         <div class="col s12 m12 l8">
-            <form  id="formularioPersona" method="post" action="{{ url('personas/crear') }}">
+            <form  id="formularioPersona" method="post" action="{{ url('personas/crear') }}" autocomplete="off">
                 {{ csrf_field() }}
                 <div class="card-panel">
                     <div class="row">

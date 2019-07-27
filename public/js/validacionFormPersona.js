@@ -16,6 +16,7 @@ $(document).ready(function () {
                 required: true,
                 minlength: 6,
                 maxlength: 10,
+                number: true
             },
             correo:{
                 required: false,
@@ -94,6 +95,7 @@ $(document).ready(function () {
                 required: "Requiere la cedula",
                 minlength: "El minimo de caracteres es de 4",
                 maxlength: "El maximo de caracteres de 10",
+                number: "Solo se permiten caracteres numericos"
             },
             correo:{
                 required: "Requiere el correo",

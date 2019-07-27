@@ -15,7 +15,9 @@ class BuscadorController extends Controller
     private $mensajes = [
         'cedula.required' => 'El campo cedula es obligatorio',
     ];
-
+    /**
+     * Genera la lista de los años
+     */
     public function crearSelectAnio(){
 
         $arrAnio = [];
@@ -60,8 +62,9 @@ class BuscadorController extends Controller
         }
 
         //Si no, ira al formulario del registro
-        return view('personas.registrarPersona', compact('promociones', 'categorias', 
+        return redirect()->route('buscarPersonas')->with('mensaje','La cedula que esta ingresando no existe');
+        /*return view('personas.registrarPersona', compact('promociones', 'categorias', 
                                                           'profesiones', 'nivelesAcademicos', 
-                                                          'paises','anios'));
+                                                          'paises','anios'));*/
     }
 }
