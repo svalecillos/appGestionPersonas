@@ -40,9 +40,11 @@ class BuscadorController extends Controller
         ];
 
         $this->validate($request, $rules, $this->mensajes);
-
+        //Borramos todo lo que no sea datos numericos
+        $cedulaTransformada = preg_replace('/\D/', '', $request->cedula);
+        
         //Consultamos la C.I en la db y obtenemos una coleccion.
-        $datosPersona = datosPersona::where('cedula',$request->cedula)->get();
+        $datosPersona = datosPersona::where('cedula',$cedulaTransformada)->get();
         
         //Listas Catalogos
         $anios = $this->crearSelectAnio();
@@ -63,8 +65,6 @@ class BuscadorController extends Controller
 
         //Si no, ira al formulario del registro
         return redirect()->route('buscarPersonas')->with('mensaje','La cedula que esta ingresando no existe');
-        /*return view('personas.registrarPersona', compact('promociones', 'categorias', 
-                                                          'profesiones', 'nivelesAcademicos', 
-                                                          'paises','anios'));*/
+        
     }
 }

@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">account_circle</i>
-                            <input id="nombres" type="text" name="cedula" class="validate">
+                            <input id="cedula" type="text" name="cedula" class="validate">
                             <label for="icon_prefix">Cedula</label>
                         </div>
                     </div>

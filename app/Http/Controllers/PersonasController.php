@@ -20,6 +20,7 @@ class PersonasController extends Controller
 
     private $mensajes = [
                 'nombres.required' => 'El campo nombres es obligatorio',
+                'categoria_id' => 'El campo categorial es obligatorio',
                 'primer_apellido.required' => 'El campo primer apellido es obligatorio',
                 'cedula.required' => 'El campo cedula es obligatorio',
                 'cedula.unique' => 'La cedula ya existe',
@@ -37,7 +38,7 @@ class PersonasController extends Controller
             'segundo_apellido' => 'max:100',
             'cedula' => 'required|unique:datos_personas|max:10',
             'correo' => 'max:100',
-            'telefono' => 'max:50',
+            'telefono' => 'required|max:50',
             /*'fecha_nacimiento' => 'required',*/
             /*'promocion_id' => 'required',*/
             /*'fecha_ingreso' => 'required',*/
@@ -104,10 +105,10 @@ class PersonasController extends Controller
 
         $this->validacionesFormulario($request);
 
-        //$datosPersona->fill($request->except(['fecha_nacimiento', 'fecha_ingreso', 'fecha_egreso']));
-        $datosPersona->fill($request->except(['fecha_nacimiento']));
-
+        $datosPersona->fill($request->except(['cedula','fecha_nacimiento']));
         $datosPersona->fecha_nacimiento= Carbon::parse($request->fecha_nacimiento)->format('Y-m-d');
+        //Borramos todo lo que no sea datos numericos
+        $datosPersona->cedula = preg_replace('/\D/', '', $request->cedula);
 
         $datosPersona->save();
 
@@ -146,7 +147,7 @@ class PersonasController extends Controller
             'segundo_apellido' => 'max:100',
             'cedula' => ['required',Rule::unique('datos_personas')->ignore($datosPersona->id),'max:10'],
             'correo' => 'max:100',
-            'telefono' => 'max:50',
+            'telefono' => 'required|max:50',
             /*'fecha_nacimiento' => 'required',*/
             /*'promocion_id' => 'required',*/
             /*'fecha_ingreso' => 'required',
@@ -169,9 +170,11 @@ class PersonasController extends Controller
         $this->validate($request, $rules, $this->mensajes);
 
         /*$datosPersona->fill($request->except(['fecha_nacimiento', 'fecha_ingreso', 'fecha_egreso']));*/
-        $datosPersona->fill($request->except(['fecha_nacimiento']));
+        $datosPersona->fill($request->except(['cedula','fecha_nacimiento']));
 
         $datosPersona->fecha_nacimiento= Carbon::parse($request->fecha_nacimiento)->format('Y-m-d');
+        //Borramos todo lo que no sea datos numericos
+        $datosPersona->cedula = preg_replace('/\D/', '', $request->cedula);
 
         $datosPersona->save();
 

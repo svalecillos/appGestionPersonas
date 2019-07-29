@@ -39,7 +39,7 @@
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">cake</i>
                                     <input type="text" id="fecha_nacimiento" class="datepicker" name="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}">
-                                    <label for="icon_prefix">Fecha de nacimiento</label>
+                                    <label for="icon_prefix">Fecha de nacimiento**</label>
                                 </div>
                             </div>
                             <div class="row">
@@ -75,7 +75,7 @@
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">call</i>
                                     <input type="text" id="telefono" name="telefono" class="validate" value="{{ old('telefono') }}">
-                                    <label for="icon_prefix">Telefono</label>
+                                    <label for="icon_prefix">Telefono**</label>
                                 </div>
                                 <!--Campo correo-->
                                 <div class="input-field col s6">
@@ -134,7 +134,7 @@
                                         <option value="{{ $categoria->id }}" {{old('categoria_id') == $categoria->id ? 'selected' : '' }}>{{ $categoria->descripcion }}</option>
                                     @endforeach
                                 </select>
-                                <label for="icon_prefix">Categoria</label>
+                                <label for="icon_prefix">Categoria**</label>
                             </div>
                         </div>
                     </div>

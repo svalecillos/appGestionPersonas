@@ -123,6 +123,12 @@
                       <span class="nav-text">Buscar personas</span>
                     </a>
                 </li>
+                <li class="bold">
+                    <a href={{ route('cargarVistaRegistrarPersona') }} class="waves-effect waves-cyan">
+                      <i class="material-icons">people</i>
+                      <span class="nav-text">Registrar personas</span>
+                    </a>
+                </li>
                 @endguest
                 @auth
                 <li class="bold">
@@ -224,6 +230,7 @@
     <script src="{{ asset('js/validacionFormAdministracion.js') }}"></script>
     <script src="{{ asset('js/validacionFormLogin.js') }}"></script>
     <script src="{{ asset('js/validacionFormRegistrarUsuario.js') }}"></script>
+    <script src="{{ asset('js/validacionFormBuscar.js') }}"></script>
     <!--materialize js-->
     <script type="text/javascript" src="{{ asset('js/materialize.min.js') }}"></script>
     <!--scrollbar-->

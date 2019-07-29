@@ -24,13 +24,13 @@ $(document).ready(function () {
                 maxlength: 100,
             },
             telefono:{
-                required: false,
+                required: true,
                 /*minlength: 11,
                 maxlength: 11,*/
                 number: true,
             },
             fecha_nacimiento:{
-                required: false,
+                required: true,
             },
             promocion_id: {
                 required: false,
@@ -98,7 +98,6 @@ $(document).ready(function () {
                 number: "Solo se permiten caracteres numericos"
             },
             correo:{
-                required: "Requiere el correo",
                 email: "Tiene que ser un correo valido",
                 maxlength: "El maximo caracteres es de 100",
             },
