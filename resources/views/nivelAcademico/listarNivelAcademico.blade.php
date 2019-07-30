@@ -15,7 +15,7 @@
             <div class="col s2 m6 l6">
                 <a href="{{ route('cargarVistaRegistrarNivelAcademico') }}" 
                 class="btn waves-effect waves-light breadcrumbs-btn green darken-1 right">
-                    <i class="material-icons left">settings_backup_restore</i>Agregar
+                    <i class="material-icons left">add</i>Agregar
                 </a>
             </div>
         </div>

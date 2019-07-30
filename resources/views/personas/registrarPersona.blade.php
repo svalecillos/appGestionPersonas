@@ -51,7 +51,7 @@
                                 </div>
                                 <!--Campo apodos nuevo-->
                                 <div class="input-field col s6">
-                                    <i class="material-icons prefix">account_circle</i>
+                                    <i class="material-icons prefix">create</i>
                                     <input id="apodos" type="text" name="apodos" class="validate upperCase" value="{{ old('apodos') }}">
                                     <label for="icon_prefix">Apodos</label>
                                 </div>

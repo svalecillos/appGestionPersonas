@@ -53,6 +53,7 @@ class BuscadorController extends Controller
         $profesiones = profesion::all();
         $nivelesAcademicos = nivel_academico::all();
         $paises = pais::all();
+        $mensaje = "La persona existe, puede mdificar los datos.";
         
         //Si consigue al usuario, ira al formulario para la actualizacion
         if(!$datosPersona->isEmpty()){
@@ -64,7 +65,7 @@ class BuscadorController extends Controller
         }
 
         //Si no, ira al formulario del registro
-        return redirect()->route('buscarPersonas')->with('mensaje','La cedula que esta ingresando no existe');
+        return redirect()->route('buscarPersonas')->with('mensaje','La cedula que esta ingresando no existe.');
         
     }
 }

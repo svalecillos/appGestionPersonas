@@ -125,7 +125,7 @@
                 </li>
                 <li class="bold">
                     <a href={{ route('cargarVistaRegistrarPersona') }} class="waves-effect waves-cyan">
-                      <i class="material-icons">people</i>
+                      <i class="material-icons">add_circle</i>
                       <span class="nav-text">Registrar personas</span>
                     </a>
                 </li>
