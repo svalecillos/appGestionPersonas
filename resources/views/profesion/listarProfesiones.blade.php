@@ -35,7 +35,9 @@
                         <td>{{ $profesion->descripcion }}</td>
                         <td>
                             <a href="{{ route('cargarVistaEditarProfesion',['id' => $profesion->id]) }}" 
-                                class="btn waves-effect waves-light cyan">Ver</a>
+                                class="btn waves-effect waves-light cyan">
+                                <i class="material-icons left">create</i>
+                            </a>
                             <!--<a href="{{ route('eliminarProfesion',['id' => $profesion->id]) }}" 
                                 class="btn waves-effect waves-light red darken-3">Eliminar</a>-->
                         </td>

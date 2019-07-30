@@ -48,9 +48,13 @@
                         <td>{{ $persona->correo }}</td>
                         <td>
                             <a href="{{ route('cargarVistaEditarPersona',['id' => $persona->id]) }}" 
-                                class="btn waves-effect waves-light cyan">Ver</a>
+                                class="btn waves-effect waves-light cyan">
+                                <i class="material-icons left">create</i>
+                            </a>
                             <a href="{{ route('eliminarPersona',['id' => $persona->id]) }}" 
-                                class="btn waves-effect waves-light red darken-3">Eliminar</a>
+                                class="btn waves-effect waves-light red darken-3">
+                                <i class="material-icons left">delete_forever</i>
+                            </a>
                         </td>
                     </tr>                   
                 @endforeach

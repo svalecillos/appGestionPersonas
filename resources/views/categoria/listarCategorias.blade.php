@@ -35,7 +35,9 @@
                         <td>{{ $categoria->descripcion }}</td>
                         <td>
                             <a href="{{ route('cargarVistaEditarCategoria',['id' => $categoria->id]) }}" 
-                                class="btn waves-effect waves-light cyan">Ver</a>
+                            class="btn waves-effect waves-light cyan">
+                                <i class="material-icons left">create</i>
+                            </a>
                             <!-- <a href="{{ route('eliminarCategoria',['id' => $categoria->id]) }}" 
                                 class="btn waves-effect waves-light red darken-3">Eliminar</a> -->
                         </td>

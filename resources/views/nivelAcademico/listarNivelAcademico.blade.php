@@ -35,7 +35,9 @@
                         <td>{{ $nivel->descripcion }}</td>
                         <td>
                             <a href="{{ route('cargarVistaEditarNivelAcademico',['id' => $nivel->id]) }}" 
-                                class="btn waves-effect waves-light cyan">Ver</a>
+                            class="btn waves-effect waves-light cyan">
+                                <i class="material-icons left">create</i>
+                            </a>
                         </td>
                     </tr>                   
                 @endforeach
