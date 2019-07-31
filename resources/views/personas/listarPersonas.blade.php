@@ -1,15 +1,15 @@
 @extends('layouts.layout')
 
-@section('title', 'listado de personas')
+@section('title', 'listado de ex-alumnos')
 
 @section('content')
     <div id="breadcrumbs-wrapper">
         <div class="row">
             <div class="col s10 m6 l6">
-                <h5 class="breadcrumbs-title">Listado de personas</h5>
+                <h5 class="breadcrumbs-title">Listado de ex-alumnos</h5>
                 <ol class="breadcrumbs">
                     <li><a href="{{ route('principal') }}">Inicio</a></li>
-                    <li class="active">Personas</li>
+                    <li class="active">Ex-alumnos</li>
                 </ol>
             </div>
             <div class="col s2 m6 l6">

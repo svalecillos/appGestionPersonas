@@ -17,6 +17,7 @@
     <meta name="msapplication-TileImage" content="{{ asset('images/favicon/mstile-144x144.png')}}">
     <!-- For Windows Phone -->
     <!-- CORE CSS-->
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <link href="{{ asset('css/materialize.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -46,7 +47,7 @@
                 <h1 class="logo-wrapper">
                   <a href="index.html" class="brand-logo">
                     <img src="{{ asset('images/logo/materialize-logo.png') }}" alt="materialize logo">
-                    <span class="logo-text hide-on-med-and-down">Sistema control de amigos</span>
+                    <span class="logo-text hide-on-med-and-down">Sistema registro de ex-alumnos</span>
                   </a>
                 </h1>
               </li>
@@ -120,13 +121,13 @@
                 <li class="bold">
                     <a href={{ route('buscarPersonas') }} class="waves-effect waves-cyan">
                       <i class="material-icons">people</i>
-                      <span class="nav-text">Buscar personas</span>
+                      <span class="nav-text">Buscar ex-alumnos</span>
                     </a>
                 </li>
                 <li class="bold">
                     <a href={{ route('cargarVistaRegistrarPersona') }} class="waves-effect waves-cyan">
                       <i class="material-icons">add_circle</i>
-                      <span class="nav-text">Registrar personas</span>
+                      <span class="nav-text">Registrar ex-alumnos</span>
                     </a>
                 </li>
                 @endguest
@@ -134,7 +135,7 @@
                 <li class="bold">
                   <a href={{ route('listarPersonas') }} class="waves-effect waves-cyan">
                     <i class="material-icons">people</i>
-                      <span class="nav-text">Personas</span>
+                      <span class="nav-text">Ex-alumnos</span>
                     </a>
                 </li>
                 

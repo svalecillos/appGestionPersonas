@@ -1,19 +1,19 @@
 @extends('layouts.layout')
 
-@section('title', 'Registrar persona')
+@section('title', 'Registrar ex-alumno')
 
 @section('content')
     <div id="breadcrumbs-wrapper">
         <div class="row">
             <div class="col s10 m6 l6">
-                <h5 class="breadcrumbs-title">Registrar persona</h5>
+                <h5 class="breadcrumbs-title">Registrar ex-alumno</h5>
                 <ol class="breadcrumbs">
                     <li><a href="{{ route('principal') }}">Inicio</a></li>
                     @guest
                     <li><a href="{{ route('buscarPersonas') }}">Buscar</a></li>
                     @endguest
                     @auth
-                    <li><a href="{{ route('listarPersonas') }}">Personas</a></li>
+                    <li><a href="{{ route('listarPersonas') }}">Ex-alumnos</a></li>
                     @endauth
                     <li class="active">Nuevo</a></li>
                 </ol>
@@ -183,13 +183,13 @@
                         <div class="row">
                             <!--Campo Instagram-->
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">business_center</i>
+                                <i class="fab fa-instagram fa-2x prefix"></i>
                                 <input type="text" id="instagram" name="instagram" class="validate upperCase" value="{{ old('instagram') }}">
                                 <label for="icon_prefix">Instagram</label>
                             </div>
                             <!--Campo twitter-->
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">business_center</i>
+                                <i class="fab fa-twitter-square fa-2x prefix"></i>
                                 <input type="text" id="twitter" name="twitter" class="validate upperCase" value="{{ old('twitter') }}">
                                 <label for="icon_prefix">Twitter</label>
                             </div>
@@ -197,13 +197,13 @@
                         <div class="row">
                             <!--Campo linkeding-->
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">business_center</i>
+                                <i class="fab fa-linkedin fa-2x prefix"></i>
                                 <input type="text" id="linkeding" name="linkeding" class="validate upperCase" value="{{ old('linkeding') }}">
                                 <label for="icon_prefix">linkedin</label>
                             </div>
                             <!--Campo facebook-->
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">business_center</i>
+                                <i class="fab fa-facebook fa-2x prefix"></i>
                                 <input type="text" id="facebook" name="facebook" class="validate upperCase" value="{{ old('facebook') }}">
                                 <label for="icon_prefix">facebook</label>
                             </div>

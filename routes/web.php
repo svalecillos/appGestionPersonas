@@ -18,22 +18,22 @@ Route::get('buscar', 'BuscadorController@index')
 Route::post('buscando_datos', 'BuscadorController@buscarPersona');
 
 //Modulo gestion personas
-Route::get('personas', 'PersonasController@listarPersonas')
+Route::get('ex-alumnos', 'PersonasController@listarPersonas')
     ->name('listarPersonas');
 
-Route::get('personas/nuevo', 'PersonasController@viewRegistrarPersona')
+Route::get('ex-alumnos/nuevo', 'PersonasController@viewRegistrarPersona')
     ->name('cargarVistaRegistrarPersona');
 
-Route::post('personas/crear', 'PersonasController@registrarPersona');
+Route::post('ex-alumnos/crear', 'PersonasController@registrarPersona');
 
-Route::get('personas/detalle/{id}', 'PersonasController@viewEditarPersona')
+Route::get('ex-alumnos/detalle/{id}', 'PersonasController@viewEditarPersona')
     ->where('id','[0-9]+')
     ->name('cargarVistaEditarPersona');
 
-Route::put('personas/actualizar/{datosPersona}', 'PersonasController@editarDatosPersona')
+Route::put('ex-alumnos/actualizar/{datosPersona}', 'PersonasController@editarDatosPersona')
 	->name('actualizarDatosPersona');
 
-Route::get('personas/eliminar/{id}', 'PersonasController@eliminar')
+Route::get('ex-alumnos/eliminar/{id}', 'PersonasController@eliminar')
     ->where('id','[0-9]+')
     ->name('eliminarPersona');
     

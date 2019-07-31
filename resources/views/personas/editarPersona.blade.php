@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', 'Editar persona')
+@section('title', 'Editar ex-alumno')
 
 @section('content')
     <div id="breadcrumbs-wrapper">
@@ -13,7 +13,7 @@
                     <li><a href="{{ route('buscarPersonas') }}">Buscar</a></li>
                     @endguest
                     @auth
-                    <li><a href="{{ route('listarPersonas') }}">Personas</a></li>
+                    <li><a href="{{ route('listarPersonas') }}">Ex-alumnos</a></li>
                     @endauth
                     <li class="active">Editar</a></li>
                 </ol>
@@ -184,13 +184,13 @@
                         <div class="row">
                             <!--Campo instagram-->
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">business_center</i>
+                                <i class="fab fa-instagram fa-2x prefix"></i>
                                 <input type="text" id="instagram" name="instagram" class="validate upperCase" value="{{ old('instagram', $datosPersona->instagram) }}">
                                 <label for="icon_prefix">Instagram</label>
                             </div>
                             <!--Campo twitter-->
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">business_center</i>
+                                <i class="fab fa-twitter-square fa-2x prefix"></i>
                                 <input type="text" id="twitter" name="twitter" class="validate upperCase" value="{{ old('twitter', $datosPersona->twitter ) }}">
                                 <label for="icon_prefix">Twitter</label>
                             </div>
@@ -198,13 +198,13 @@
                         <div class="row">
                             <!--Campo linkeding-->
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">business_center</i>
+                                <i class="fab fa-linkedin fa-2x prefix"></i>
                                 <input type="text" id="linkeding" name="linkeding" class="validate upperCase" value="{{ old('linkeding', $datosPersona->linkeding) }}">
                                 <label for="icon_prefix">linkedin</label>
                             </div>
                             <!--Campo facebook-->
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">business_center</i>
+                                <i class="fab fa-facebook fa-2x prefix"></i>
                                 <input type="text" id="facebook" name="facebook" class="validate upperCase" value="{{ old('facebook', $datosPersona->facebook) }}">
                                 <label for="icon_prefix">facebook</label>
                             </div>
